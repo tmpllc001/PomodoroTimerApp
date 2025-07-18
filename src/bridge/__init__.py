@@ -1,0 +1,1 @@
+# Bridge module for UI-Backend integration

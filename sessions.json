@@ -1,0 +1,18 @@
+[
+  {
+    "session_type": "work",
+    "start_time": "2025-07-18T09:30:43.261441",
+    "planned_duration": 3,
+    "end_time": "2025-07-18T09:30:45.263894",
+    "actual_duration": 3,
+    "completed": true
+  },
+  {
+    "session_type": "short_break",
+    "start_time": "2025-07-18T09:30:48.267532",
+    "planned_duration": 2,
+    "end_time": "2025-07-18T09:30:49.272867",
+    "actual_duration": 0,
+    "completed": false
+  }
+]

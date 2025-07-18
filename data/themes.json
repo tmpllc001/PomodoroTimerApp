@@ -1,0 +1,49 @@
+{
+  "themes": [
+    {
+      "name": "pomodoro",
+      "type": "custom",
+      "colors": {
+        "primary": "#e74c3c",
+        "secondary": "#c0392b",
+        "accent": "#f39c12",
+        "background": "#fdf2e9",
+        "surface": "#fff5f5",
+        "text_primary": "#2c3e50",
+        "text_secondary": "#7f8c8d",
+        "border": "#fadbd8",
+        "success": "#27ae60",
+        "warning": "#f39c12",
+        "error": "#e74c3c",
+        "info": "#3498db"
+      },
+      "font_family": "Arial",
+      "font_size": 12,
+      "border_radius": 10,
+      "transparency": 0.95
+    },
+    {
+      "name": "focus",
+      "type": "custom",
+      "colors": {
+        "primary": "#3498db",
+        "secondary": "#2980b9",
+        "accent": "#1abc9c",
+        "background": "#eef4f7",
+        "surface": "#f8fbfc",
+        "text_primary": "#2c3e50",
+        "text_secondary": "#7f8c8d",
+        "border": "#d6e9f0",
+        "success": "#27ae60",
+        "warning": "#f39c12",
+        "error": "#e74c3c",
+        "info": "#3498db"
+      },
+      "font_family": "Arial",
+      "font_size": 12,
+      "border_radius": 6,
+      "transparency": 0.92
+    }
+  ],
+  "current_theme": "light"
+}

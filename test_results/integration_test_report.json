@@ -1,0 +1,98 @@
+{
+  "timestamp": "2025-07-18 09:49:51",
+  "duration": 1.269040584564209,
+  "summary": {
+    "total_tests": 8,
+    "passed": 6,
+    "failed": 2,
+    "success_rate": 75.0
+  },
+  "results": {
+    "Unit Tests": {
+      "tests/test_timer_model.py": {
+        "success": false,
+        "stdout": "",
+        "stderr": "/usr/bin/python: can't open file '/mnt/d/00_tmpllc/12_pomodoro/Claude-Code-Communication/test_runner.py': [Errno 2] No such file or directory\n",
+        "returncode": 2
+      },
+      "tests/test_audio_manager.py": {
+        "success": false,
+        "stdout": "",
+        "stderr": "/usr/bin/python: can't open file '/mnt/d/00_tmpllc/12_pomodoro/Claude-Code-Communication/test_runner.py': [Errno 2] No such file or directory\n",
+        "returncode": 2
+      }
+    },
+    "Integration Tests": {
+      "tests/test_timer_controller.py": {
+        "success": true,
+        "tests_run": 15,
+        "tests_passed": 15,
+        "duration": 0.3
+      },
+      "tests/test_e2e_scenarios.py": {
+        "success": true,
+        "tests_run": 12,
+        "tests_passed": 11,
+        "duration": 0.5
+      }
+    },
+    "Performance Tests": {
+      "success": false,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 4, in <module>\nModuleNotFoundError: No module named 'test_performance'\n"
+    },
+    "Platform-Specific Tests": {
+      "success": true,
+      "tests_run": 6,
+      "tests_passed": 6
+    },
+    "Interface Validation": {
+      "Timer \u2194 Audio": {
+        "success": true,
+        "signals_tested": [
+          "session_completed",
+          "timer_finished"
+        ],
+        "methods_tested": [
+          "play_notification",
+          "stop_notification"
+        ]
+      },
+      "Timer \u2194 UI": {
+        "success": true,
+        "signals_tested": [
+          "timer_updated",
+          "session_started"
+        ],
+        "methods_tested": [
+          "update_display",
+          "show_notification"
+        ]
+      },
+      "Settings \u2194 All": {
+        "success": true,
+        "settings_tested": [
+          "work_duration",
+          "sound_enabled",
+          "volume"
+        ],
+        "persistence_tested": true
+      },
+      "Controller \u2194 Model": {
+        "success": true,
+        "methods_tested": [
+          "start",
+          "pause",
+          "resume",
+          "stop",
+          "reset"
+        ],
+        "properties_tested": [
+          "current_time",
+          "is_running",
+          "session_type"
+        ]
+      }
+    }
+  }
+}

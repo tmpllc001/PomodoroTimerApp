@@ -1,0 +1,161 @@
+/* 
+Main CSS Styles for Pomodoro Timer Application
+Provides dark theme and transparency styling for components.
+*/
+
+/* Main Window Styles */
+QMainWindow {
+    background-color: rgba(30, 30, 30, 200);
+    border: 2px solid rgba(100, 100, 100, 150);
+    border-radius: 10px;
+}
+
+/* Timer Display Styles */
+QLabel#TimerLabel {
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    font-size: 36px;
+    font-weight: bold;
+    background-color: transparent;
+    padding: 10px;
+    border: 1px solid rgba(0, 255, 0, 50);
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Timer Warning States */
+QLabel#TimerLabel[warning="true"] {
+    color: #ff6600;
+    border-color: rgba(255, 102, 0, 50);
+}
+
+QLabel#TimerLabel[critical="true"] {
+    color: #ff0000;
+    border-color: rgba(255, 0, 0, 50);
+}
+
+/* Control Panel Button Styles */
+QPushButton {
+    font-family: 'Arial', sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    min-height: 35px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Start Button */
+QPushButton#StartButton {
+    background-color: rgba(0, 150, 0, 180);
+    color: white;
+    border: 2px solid rgba(0, 200, 0, 100);
+}
+
+QPushButton#StartButton:hover {
+    background-color: rgba(0, 180, 0, 220);
+    border-color: rgba(0, 255, 0, 150);
+}
+
+QPushButton#StartButton:pressed {
+    background-color: rgba(0, 120, 0, 200);
+}
+
+QPushButton#StartButton:disabled {
+    background-color: rgba(100, 100, 100, 100);
+    color: rgba(200, 200, 200, 150);
+    border-color: rgba(150, 150, 150, 80);
+}
+
+/* Pause Button */
+QPushButton#PauseButton {
+    background-color: rgba(255, 150, 0, 180);
+    color: white;
+    border: 2px solid rgba(255, 200, 0, 100);
+}
+
+QPushButton#PauseButton:hover {
+    background-color: rgba(255, 180, 0, 220);
+    border-color: rgba(255, 255, 0, 150);
+}
+
+QPushButton#PauseButton:pressed {
+    background-color: rgba(255, 120, 0, 200);
+}
+
+QPushButton#PauseButton:disabled {
+    background-color: rgba(100, 100, 100, 100);
+    color: rgba(200, 200, 200, 150);
+    border-color: rgba(150, 150, 150, 80);
+}
+
+/* Reset Button */
+QPushButton#ResetButton {
+    background-color: rgba(200, 0, 0, 180);
+    color: white;
+    border: 2px solid rgba(255, 0, 0, 100);
+}
+
+QPushButton#ResetButton:hover {
+    background-color: rgba(220, 0, 0, 220);
+    border-color: rgba(255, 100, 100, 150);
+}
+
+QPushButton#ResetButton:pressed {
+    background-color: rgba(180, 0, 0, 200);
+}
+
+QPushButton#ResetButton:disabled {
+    background-color: rgba(100, 100, 100, 100);
+    color: rgba(200, 200, 200, 150);
+    border-color: rgba(150, 150, 150, 80);
+}
+
+/* Widget Container Styles */
+QWidget {
+    background-color: transparent;
+}
+
+/* Layout Margins and Spacing */
+QVBoxLayout {
+    margin: 15px;
+    spacing: 10px;
+}
+
+QHBoxLayout {
+    margin: 5px;
+    spacing: 8px;
+}
+
+/* Transparency Effects */
+QWidget#TransparentContainer {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+/* Focus Styles */
+QPushButton:focus {
+    outline: 2px solid rgba(255, 255, 255, 100);
+    outline-offset: 2px;
+}
+
+/* Animation Styles (for future enhancement) */
+QPushButton {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Dark Theme Adjustments */
+QWidget {
+    selection-background-color: rgba(100, 100, 100, 100);
+    selection-color: white;
+}
+
+/* Tooltip Styles */
+QToolTip {
+    background-color: rgba(50, 50, 50, 220);
+    color: white;
+    border: 1px solid rgba(100, 100, 100, 150);
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 12px;
+}

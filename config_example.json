@@ -1,0 +1,62 @@
+{
+  "timer": {
+    "work_duration": 1500,
+    "short_break_duration": 300,
+    "long_break_duration": 900,
+    "long_break_interval": 4
+  },
+  "audio": {
+    "volume": 0.7,
+    "sound_enabled": true,
+    "work_complete_sound": "work_complete.wav",
+    "break_complete_sound": "break_complete.wav",
+    "long_break_complete_sound": "long_break_complete.wav",
+    "notification_sound": "notification.wav"
+  },
+  "ui": {
+    "window_width": 400,
+    "window_height": 600,
+    "window_x": 100,
+    "window_y": 100,
+    "always_on_top": true,
+    "window_opacity": 0.9,
+    "background_opacity": 0.8,
+    "theme": "dark",
+    "primary_color": "#2196F3",
+    "secondary_color": "#FFC107",
+    "accent_color": "#FF5722",
+    "font_family": "Arial",
+    "font_size": 14,
+    "timer_font_size": 48,
+    "enable_animations": true,
+    "animation_duration": 300,
+    "show_progress_bar": true,
+    "show_session_count": true,
+    "show_daily_stats": true,
+    "show_desktop_notifications": true,
+    "notification_duration": 5000,
+    "minimize_to_tray": true,
+    "start_minimized": false,
+    "close_to_tray": true
+  },
+  "app": {
+    "data_directory": "data",
+    "sessions_file": "sessions.json",
+    "backup_enabled": true,
+    "backup_interval": 24,
+    "log_level": "INFO",
+    "log_file": "pomodoro_app.log",
+    "max_log_size": 10485760,
+    "ui_update_interval": 100,
+    "auto_save_interval": 300,
+    "enable_statistics": true,
+    "enable_export": true,
+    "enable_themes": true,
+    "enable_plugins": false,
+    "auto_start": false,
+    "check_for_updates": true,
+    "language": "en",
+    "date_format": "%Y-%m-%d",
+    "time_format": "%H:%M:%S"
+  }
+}

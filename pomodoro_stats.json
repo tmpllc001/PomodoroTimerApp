@@ -1,0 +1,33 @@
+{
+  "total_sessions": 2,
+  "total_work_time": 1,
+  "total_break_time": 1,
+  "daily_stats": {
+    "2025-07-18": {
+      "work_sessions": 1,
+      "break_sessions": 1,
+      "work_time": 1,
+      "break_time": 1
+    }
+  },
+  "weekly_stats": {
+    "2025-W29": {
+      "work_sessions": 1,
+      "break_sessions": 1,
+      "work_time": 1,
+      "break_time": 1
+    }
+  },
+  "session_history": [
+    {
+      "timestamp": "2025-07-18T17:19:56.771761",
+      "type": "work",
+      "duration": 1
+    },
+    {
+      "timestamp": "2025-07-18T17:20:57.771665",
+      "type": "break",
+      "duration": 1
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "sessions": [
+    {
+      "session_id": "f1285987-6d9c-4b1f-ae72-769a3f59eea9",
+      "session_type": "work",
+      "start_time": "2025-07-18T21:14:24.067618",
+      "end_time": "2025-07-18T21:15:24.067618",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "fa56ca52-356f-44b1-832c-775ca4b10b4e",
+      "session_type": "work",
+      "start_time": "2025-07-18T21:02:34.266289",
+      "end_time": "2025-07-18T21:27:34.266289",
+      "planned_duration": 25,
+      "actual_duration": 25,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "902670e4-f49d-4909-8250-3dae4cb8bf45",
+      "session_type": "break",
+      "start_time": "2025-07-18T21:22:34.269118",
+      "end_time": "2025-07-18T21:27:34.269118",
+      "planned_duration": 5,
+      "actual_duration": 5,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "a37f29d1-1c59-49ad-9d5a-b9806d0411c7",
+      "session_type": "work",
+      "start_time": "2025-07-18T21:44:51.581948",
+      "end_time": "2025-07-18T21:45:51.581948",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    }
+  ],
+  "daily_stats": {
+    "2025-07-18": {
+      "date": "2025-07-18",
+      "work_sessions": 3,
+      "break_sessions": 1,
+      "work_time": 27,
+      "break_time": 5,
+      "completed_sessions": 4,
+      "productivity_score": 0.0,
+      "focus_score": 0.0
+    }
+  },
+  "weekly_stats": {
+    "2025-W29": {
+      "week_key": "2025-W29",
+      "work_sessions": 3,
+      "break_sessions": 1,
+      "work_time": 27,
+      "break_time": 5,
+      "completed_sessions": 4,
+      "productivity_score": 0.0,
+      "focus_score": 0.0,
+      "best_day": null,
+      "streak_days": 0
+    }
+  },
+  "last_updated": "2025-07-18T21:45:51.582138"
+}

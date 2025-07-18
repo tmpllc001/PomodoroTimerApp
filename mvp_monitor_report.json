@@ -1,0 +1,329 @@
+{
+  "timestamp": "2025-07-18T09:50:37.913218",
+  "metrics": {
+    "startup_time": 1.5224847793579102,
+    "memory_usage": [
+      {
+        "timestamp": 1752799805.3320913,
+        "value": 12.484375
+      },
+      {
+        "timestamp": 1752799806.4337978,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799807.5353541,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799808.636929,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799809.7384355,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799810.8400786,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799811.9417179,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799813.0433552,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799814.1448889,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799815.2464473,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799816.3480191,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799817.4496121,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799818.5511715,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799819.6527216,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799820.7542968,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799821.8559167,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799822.9575076,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799824.0590508,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799825.1606681,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799826.2622988,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799827.363935,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799828.4655418,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799829.5671437,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799830.6687052,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799831.7702904,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799832.8719313,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799833.9735258,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799835.0751038,
+        "value": 12.609375
+      },
+      {
+        "timestamp": 1752799836.1769276,
+        "value": 12.609375
+      }
+    ],
+    "cpu_usage": [
+      {
+        "timestamp": 1752799805.4325774,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799806.5341969,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799807.6357532,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799808.7372916,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799809.8389144,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799810.9404442,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799812.0421877,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799813.1437242,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799814.2452614,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799815.3468509,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799816.4484022,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799817.5500038,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799818.651544,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799819.7531052,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799820.8547354,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799821.9563453,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799823.057891,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799824.1594932,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799825.2610703,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799826.3627267,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799827.4643657,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799828.5659816,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799829.66753,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799830.7690928,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799831.8707247,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799832.972363,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799834.073918,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799835.1755342,
+        "value": 0.0
+      },
+      {
+        "timestamp": 1752799836.2774036,
+        "value": 0.0
+      }
+    ],
+    "timer_accuracy": [
+      {
+        "timestamp": 1752799805.3333359,
+        "deviation": 0.06956388986470341
+      },
+      {
+        "timestamp": 1752799810.3384087,
+        "deviation": 0.2256597070976688
+      },
+      {
+        "timestamp": 1752799815.343489,
+        "deviation": -0.1606837393099646
+      },
+      {
+        "timestamp": 1752799820.3485587,
+        "deviation": -0.23642619454703973
+      },
+      {
+        "timestamp": 1752799825.353638,
+        "deviation": -0.2696360539423591
+      },
+      {
+        "timestamp": 1752799830.358718,
+        "deviation": -0.3664871371046954
+      },
+      {
+        "timestamp": 1752799835.3639727,
+        "deviation": 0.3588157306496167
+      }
+    ],
+    "ui_responsiveness": [
+      {
+        "timestamp": 1752799805.3333383,
+        "response_time": 30.061703349275167
+      },
+      {
+        "timestamp": 1752799810.3384156,
+        "response_time": 56.11166258834172
+      },
+      {
+        "timestamp": 1752799815.3434951,
+        "response_time": 51.310442682320236
+      },
+      {
+        "timestamp": 1752799820.3485653,
+        "response_time": 50.18835688684885
+      },
+      {
+        "timestamp": 1752799825.353645,
+        "response_time": 23.321063265143398
+      },
+      {
+        "timestamp": 1752799830.3587258,
+        "response_time": 32.49857865874896
+      },
+      {
+        "timestamp": 1752799835.3639798,
+        "response_time": 40.349581031063074
+      }
+    ],
+    "error_count": 0,
+    "test_results": {
+      "success": false,
+      "duration": 0.02173590660095215,
+      "stdout": "",
+      "stderr": "/usr/bin/python: can't open file '/mnt/d/00_tmpllc/12_pomodoro/Claude-Code-Communication/run_integration_tests.py': [Errno 2] No such file or directory\n"
+    }
+  },
+  "thresholds": {
+    "startup_time_max": 3.0,
+    "memory_max": 50,
+    "cpu_avg_max": 5.0,
+    "timer_accuracy_tolerance": 1.0,
+    "ui_response_max": 100
+  },
+  "summary": {
+    "startup_time": 1.5224847793579102,
+    "avg_memory": 12.605064655172415,
+    "max_memory": 12.609375,
+    "avg_cpu": 0.0,
+    "max_cpu": 0.0,
+    "max_timer_deviation": 0.3664871371046954,
+    "avg_timer_deviation": 0.24103892178800684,
+    "avg_ui_response": 40.548769780248776,
+    "max_ui_response": 56.11166258834172,
+    "readiness_score": 85.71428571428571,
+    "production_ready": false
+  }
+}
