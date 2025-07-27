@@ -724,7 +724,10 @@ class WorkStartCountdownWindow(QMainWindow):
     
     def update_countdown(self):
         """カウントダウン更新"""
+        logger.info(f"🔄 カウントダウン更新: count={self.count}")
+        
         if self.count > 0:
+            logger.info(f"📱 表示更新: {self.count}")
             self.countdown_label.setText(str(self.count))
             
             # アニメーション効果（縮小→拡大）
@@ -732,8 +735,10 @@ class WorkStartCountdownWindow(QMainWindow):
             
             # カウント減算
             self.count -= 1
+            logger.info(f"📉 カウント減算後: count={self.count}")
         else:
             # カウントダウン終了
+            logger.info("⏹️ カウントダウン終了")
             self.timer.stop()
             self.countdown_finished.emit()
             self.close()
