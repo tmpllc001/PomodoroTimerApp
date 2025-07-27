@@ -118,6 +118,11 @@ class SimpleBreakContentManager:
     def __init__(self):
         self.content_file = Path("data/break_content.json")
         self.content = self.load_content()
+        # デフォルトキーが存在することを保証
+        if "simple_tips" not in self.content:
+            self.content["simple_tips"] = self.get_default_content()["simple_tips"]
+        if "break_activities" not in self.content:
+            self.content["break_activities"] = self.get_default_content()["break_activities"]
     
     def load_content(self) -> Dict[str, Any]:
         """コンテンツデータを読み込み"""
@@ -481,6 +486,10 @@ class SimpleBreakWindow(QMainWindow):
     def update_countdown(self):
         """カウントダウン更新"""
         self.time_left -= 1
+        
+        # 負の値にならないように保護
+        if self.time_left < 0:
+            self.time_left = 0
         
         minutes = self.time_left // 60
         seconds = self.time_left % 60

@@ -139,6 +139,26 @@
       "focus_score": 0,
       "interruptions": 0,
       "interactions": 2
+    },
+    {
+      "session_start": "2025-07-27T10:35:06.994863",
+      "session_type": "work",
+      "hour_of_day": 10,
+      "day_of_week": 6,
+      "day_name": "Sunday",
+      "month": 7,
+      "month_name": "July",
+      "season": "summer",
+      "date": "2025-07-27",
+      "time_period": "morning",
+      "weekend": true,
+      "session_end": "2025-07-27T10:36:06.999060",
+      "duration_minutes": 0,
+      "completed": false,
+      "efficiency_score": 0,
+      "focus_score": 0,
+      "interruptions": 0,
+      "interactions": 1
     }
   ],
   "hourly_performance": {
@@ -156,6 +176,9 @@
     ],
     "0": [
       0.0
+    ],
+    "10": [
+      0.0
     ]
   },
   "daily_performance": {
@@ -171,6 +194,9 @@
     ],
     "5": [
       0.0
+    ],
+    "6": [
+      0.0
     ]
   },
   "monthly_performance": {
@@ -181,8 +207,9 @@
       0.0,
       0.0,
       0.0,
+      0.0,
       0.0
     ]
   },
-  "last_updated": "2025-07-26T00:30:09.649341"
+  "last_updated": "2025-07-27T10:36:06.999144"
 }
