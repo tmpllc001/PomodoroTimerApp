@@ -73,18 +73,41 @@ class Task:
     
     def to_dict(self) -> Dict:
         """TaskインスタンスをJSON形式の辞書に変換"""
-        return {
-            'task_id': self.task_id,
-            'title': self.title,
-            'description': self.description,
-            'priority': self.priority,
-            'estimated_pomodoros': self.estimated_pomodoros,
-            'actual_pomodoros': self.actual_pomodoros,
-            'status': self.status,
-            'created_at': self.created_at.isoformat(),
-            'completed_at': self.completed_at.isoformat() if self.completed_at else None,
-            'tags': self.tags
-        }
+        try:
+            # ステータスが文字列でない場合のエラーハンドリング
+            status_value = self.status
+            if hasattr(self.status, 'value'):
+                status_value = self.status.value
+            elif not isinstance(self.status, str):
+                status_value = str(self.status)
+                
+            return {
+                'task_id': self.task_id,
+                'title': self.title,
+                'description': self.description,
+                'priority': self.priority,
+                'estimated_pomodoros': self.estimated_pomodoros,
+                'actual_pomodoros': self.actual_pomodoros,
+                'status': status_value,
+                'created_at': self.created_at.isoformat(),
+                'completed_at': self.completed_at.isoformat() if self.completed_at else None,
+                'tags': self.tags or []
+            }
+        except Exception as e:
+            logger.error(f"❌ タスク辞書変換エラー: {e}")
+            # デフォルト値で復旧
+            return {
+                'task_id': self.task_id,
+                'title': self.title,
+                'description': self.description,
+                'priority': self.priority,
+                'estimated_pomodoros': self.estimated_pomodoros,
+                'actual_pomodoros': self.actual_pomodoros,
+                'status': TaskStatus.PENDING.value,
+                'created_at': self.created_at.isoformat(),
+                'completed_at': self.completed_at.isoformat() if self.completed_at else None,
+                'tags': self.tags or []
+            }
     
     def get_completion_percentage(self) -> float:
         """完了率を計算"""
@@ -193,27 +216,42 @@ class TaskManager:
     
     def update_task(self, task_id: str, **kwargs) -> bool:
         """タスクを更新"""
-        if task_id not in self.tasks:
-            logger.warning(f"⚠️ タスクが見つかりません: {task_id}")
+        try:
+            if task_id not in self.tasks:
+                logger.warning(f"⚠️ タスクが見つかりません: {task_id}")
+                return False
+            
+            task = self.tasks[task_id]
+            
+            # 更新可能な属性
+            updatable_attrs = ['title', 'description', 'priority', 'estimated_pomodoros', 
+                              'actual_pomodoros', 'status', 'tags']
+            
+            for attr, value in kwargs.items():
+                if attr in updatable_attrs:
+                    # ステータス値の正規化
+                    if attr == 'status':
+                        if hasattr(value, 'value'):
+                            value = value.value
+                        elif not isinstance(value, str):
+                            value = str(value)
+                    setattr(task, attr, value)
+            
+            # 完了ステータスの場合は完了時刻を設定
+            status_value = task.status
+            if hasattr(task.status, 'value'):
+                status_value = task.status.value
+            
+            if status_value == TaskStatus.COMPLETED.value and not task.completed_at:
+                task.completed_at = datetime.now()
+            
+            self.save_data()
+            logger.info(f"📋 タスク更新: {task.title} (ID: {task_id[:8]})")
+            return True
+            
+        except Exception as e:
+            logger.error(f"❌ タスク更新エラー: {e}")
             return False
-        
-        task = self.tasks[task_id]
-        
-        # 更新可能な属性
-        updatable_attrs = ['title', 'description', 'priority', 'estimated_pomodoros', 
-                          'actual_pomodoros', 'status', 'tags']
-        
-        for attr, value in kwargs.items():
-            if attr in updatable_attrs:
-                setattr(task, attr, value)
-        
-        # 完了ステータスの場合は完了時刻を設定
-        if task.status == TaskStatus.COMPLETED.value and not task.completed_at:
-            task.completed_at = datetime.now()
-        
-        self.save_data()
-        logger.info(f"📋 タスク更新: {task.title} (ID: {task_id[:8]})")
-        return True
     
     def delete_task(self, task_id: str) -> bool:
         """タスクを削除"""
@@ -258,47 +296,66 @@ class TaskManager:
     
     def set_current_task(self, task_id: Optional[str]) -> bool:
         """現在のタスクを設定"""
-        if task_id and task_id not in self.tasks:
-            logger.warning(f"⚠️ タスクが見つかりません: {task_id}")
+        try:
+            if task_id and task_id not in self.tasks:
+                logger.warning(f"⚠️ タスクが見つかりません: {task_id}")
+                return False
+            
+            # 前の現在タスクを進行中から保留に戻す
+            if self.current_task_id and self.current_task_id in self.tasks:
+                old_task = self.tasks[self.current_task_id]
+                old_status = old_task.status
+                if hasattr(old_status, 'value'):
+                    old_status = old_status.value
+                    
+                if old_status == TaskStatus.IN_PROGRESS.value:
+                    old_task.status = TaskStatus.PENDING.value
+            
+            self.current_task_id = task_id
+            
+            # 新しい現在タスクを進行中に設定
+            if task_id:
+                self.tasks[task_id].status = TaskStatus.IN_PROGRESS.value
+                logger.info(f"📋 現在のタスク設定: {self.tasks[task_id].title}")
+            else:
+                logger.info("📋 現在のタスクをクリア")
+            
+            self.save_data()
+            return True
+            
+        except Exception as e:
+            logger.error(f"❌ 現在タスク設定エラー: {e}")
             return False
-        
-        # 前の現在タスクを進行中から保留に戻す
-        if self.current_task_id and self.current_task_id in self.tasks:
-            old_task = self.tasks[self.current_task_id]
-            if old_task.status == TaskStatus.IN_PROGRESS.value:
-                old_task.status = TaskStatus.PENDING.value
-        
-        self.current_task_id = task_id
-        
-        # 新しい現在タスクを進行中に設定
-        if task_id:
-            self.tasks[task_id].status = TaskStatus.IN_PROGRESS.value
-            logger.info(f"📋 現在のタスク設定: {self.tasks[task_id].title}")
-        else:
-            logger.info("📋 現在のタスクをクリア")
-        
-        self.save_data()
-        return True
     
     def add_pomodoro_to_task(self, task_id: str, pomodoros: int = 1) -> bool:
         """タスクにポモドーロを追加"""
-        if task_id not in self.tasks:
-            logger.warning(f"⚠️ タスクが見つかりません: {task_id}")
+        try:
+            if task_id not in self.tasks:
+                logger.warning(f"⚠️ タスクが見つかりません: {task_id}")
+                return False
+            
+            task = self.tasks[task_id]
+            task.actual_pomodoros += pomodoros
+            
+            # 現在のステータスを確認
+            current_status = task.status
+            if hasattr(current_status, 'value'):
+                current_status = current_status.value
+            
+            # 予定ポモドーロ数に達した場合は完了に設定
+            if task.actual_pomodoros >= task.estimated_pomodoros:
+                if current_status != TaskStatus.COMPLETED.value:
+                    task.status = TaskStatus.COMPLETED.value
+                    task.completed_at = datetime.now()
+                    logger.info(f"🎉 タスク完了: {task.title}")
+            
+            self.save_data()
+            logger.info(f"📋 ポモドーロ追加: {task.title} ({task.actual_pomodoros}/{task.estimated_pomodoros})")
+            return True
+            
+        except Exception as e:
+            logger.error(f"❌ ポモドーロ追加エラー: {e}")
             return False
-        
-        task = self.tasks[task_id]
-        task.actual_pomodoros += pomodoros
-        
-        # 予定ポモドーロ数に達した場合は完了に設定
-        if task.actual_pomodoros >= task.estimated_pomodoros:
-            if task.status != TaskStatus.COMPLETED.value:
-                task.status = TaskStatus.COMPLETED.value
-                task.completed_at = datetime.now()
-                logger.info(f"🎉 タスク完了: {task.title}")
-        
-        self.save_data()
-        logger.info(f"📋 ポモドーロ追加: {task.title} ({task.actual_pomodoros}/{task.estimated_pomodoros})")
-        return True
     
     def get_task_statistics(self) -> Dict[str, Any]:
         """タスク統計を取得"""

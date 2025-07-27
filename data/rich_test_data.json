@@ -1,0 +1,1959 @@
+{
+  "sessions": [
+    {
+      "session_id": "work_20250625_172137",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-25T17:21:37.267099",
+      "actual_duration": 18.255030042637305,
+      "completed": true,
+      "efficiency_score": 59.46755258254238,
+      "focus_score": 58.18450794704391,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 17,
+        "day_of_week": 2,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250625_081137",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-25T08:11:37.267099",
+      "actual_duration": 15.870083844407215,
+      "completed": true,
+      "efficiency_score": 89.0038717789673,
+      "focus_score": 93.67047242664228,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 8,
+        "day_of_week": 2,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250625_161737",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-25T16:17:37.267099",
+      "actual_duration": 19.463146718757454,
+      "completed": true,
+      "efficiency_score": 73.96797520099969,
+      "focus_score": 77.82300064564282,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 16,
+        "day_of_week": 2,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250625_130537",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-25T13:05:37.267099",
+      "actual_duration": 18.871465151342516,
+      "completed": true,
+      "efficiency_score": 97.44263193063196,
+      "focus_score": 86.67793996219253,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 13,
+        "day_of_week": 2,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250626_182637",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-26T18:26:37.267099",
+      "actual_duration": 16.81509191384795,
+      "completed": true,
+      "efficiency_score": 83.91533953761109,
+      "focus_score": 83.79606481101932,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 18,
+        "day_of_week": 3,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250626_133337",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-26T13:33:37.267099",
+      "actual_duration": 23.88641787308797,
+      "completed": false,
+      "efficiency_score": 65.86010388122996,
+      "focus_score": 54.01376255698526,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 13,
+        "day_of_week": 3,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250626_110237",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-26T11:02:37.267099",
+      "actual_duration": 19.566515246967896,
+      "completed": true,
+      "efficiency_score": 91.8150691710402,
+      "focus_score": 78.52911018162973,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 11,
+        "day_of_week": 3,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250626_130837",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-26T13:08:37.267099",
+      "actual_duration": 24.113926611666646,
+      "completed": true,
+      "efficiency_score": 79.32409991463466,
+      "focus_score": 83.09353133194435,
+      "interruptions": 3,
+      "environment_data": {
+        "hour_of_day": 13,
+        "day_of_week": 3,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250627_150437",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-27T15:04:37.267099",
+      "actual_duration": 20.11969694471362,
+      "completed": true,
+      "efficiency_score": 70.87888484604667,
+      "focus_score": 67.66651275131771,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 15,
+        "day_of_week": 4,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250627_093637",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-27T09:36:37.267099",
+      "actual_duration": 24.316475109362603,
+      "completed": true,
+      "efficiency_score": 69.68263985236072,
+      "focus_score": 66.62769909132697,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 9,
+        "day_of_week": 4,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250627_111737",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-27T11:17:37.267099",
+      "actual_duration": 20.38172755630929,
+      "completed": false,
+      "efficiency_score": 62.229067619174984,
+      "focus_score": 65.90233972951671,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 11,
+        "day_of_week": 4,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250627_184237",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-27T18:42:37.267099",
+      "actual_duration": 22.491361754457134,
+      "completed": true,
+      "efficiency_score": 78.57210829157182,
+      "focus_score": 92.90286165871278,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 18,
+        "day_of_week": 4,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250628_141437",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-28T14:14:37.267099",
+      "actual_duration": 24.073026102952017,
+      "completed": true,
+      "efficiency_score": 51.4275185378994,
+      "focus_score": 50.03444356397419,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 14,
+        "day_of_week": 5,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250628_114237",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-28T11:42:37.267099",
+      "actual_duration": 23.121043277646802,
+      "completed": true,
+      "efficiency_score": 94.52895602278346,
+      "focus_score": 85.28900932656833,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 11,
+        "day_of_week": 5,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250628_103837",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-28T10:38:37.267099",
+      "actual_duration": 19.32376318412,
+      "completed": true,
+      "efficiency_score": 81.70670899475216,
+      "focus_score": 93.41155379773656,
+      "interruptions": 3,
+      "environment_data": {
+        "hour_of_day": 10,
+        "day_of_week": 5,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250628_172237",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-28T17:22:37.267099",
+      "actual_duration": 15.955186125935159,
+      "completed": true,
+      "efficiency_score": 75.33780592012177,
+      "focus_score": 78.60104322345438,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 17,
+        "day_of_week": 5,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250629_155637",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-29T15:56:37.267099",
+      "actual_duration": 23.61694964679854,
+      "completed": true,
+      "efficiency_score": 90.37616404778373,
+      "focus_score": 90.96048184669581,
+      "interruptions": 3,
+      "environment_data": {
+        "hour_of_day": 15,
+        "day_of_week": 6,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250629_084337",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-29T08:43:37.267099",
+      "actual_duration": 18.698196470561573,
+      "completed": true,
+      "efficiency_score": 100,
+      "focus_score": 93.88887658397242,
+      "interruptions": 3,
+      "environment_data": {
+        "hour_of_day": 8,
+        "day_of_week": 6,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250629_183437",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-29T18:34:37.267099",
+      "actual_duration": 24.96434169927403,
+      "completed": true,
+      "efficiency_score": 64.66778516464021,
+      "focus_score": 50.61797060801449,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 18,
+        "day_of_week": 6,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250630_182837",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-30T18:28:37.267099",
+      "actual_duration": 18.96708149308397,
+      "completed": false,
+      "efficiency_score": 45.042476251288676,
+      "focus_score": 52.64661902984772,
+      "interruptions": 3,
+      "environment_data": {
+        "hour_of_day": 18,
+        "day_of_week": 0,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250630_132637",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-30T13:26:37.267099",
+      "actual_duration": 18.82548514732435,
+      "completed": true,
+      "efficiency_score": 95.0310375657358,
+      "focus_score": 89.70046237867194,
+      "interruptions": 3,
+      "environment_data": {
+        "hour_of_day": 13,
+        "day_of_week": 0,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250630_170037",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-06-30T17:00:37.267099",
+      "actual_duration": 16.997978952879752,
+      "completed": true,
+      "efficiency_score": 54.065588778322656,
+      "focus_score": 60.65940373832367,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 17,
+        "day_of_week": 0,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250701_143337",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-01T14:33:37.267099",
+      "actual_duration": 21.70300445272808,
+      "completed": false,
+      "efficiency_score": 44.479347131185264,
+      "focus_score": 51.1794286974048,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 14,
+        "day_of_week": 1,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250701_115937",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-01T11:59:37.267099",
+      "actual_duration": 18.91659003326256,
+      "completed": true,
+      "efficiency_score": 63.95149589842313,
+      "focus_score": 62.172397044113616,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 11,
+        "day_of_week": 1,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250701_165737",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-01T16:57:37.267099",
+      "actual_duration": 17.511050336210797,
+      "completed": true,
+      "efficiency_score": 86.37461065706415,
+      "focus_score": 93.26728960929057,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 16,
+        "day_of_week": 1,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250701_154637",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-01T15:46:37.267099",
+      "actual_duration": 18.13720930669406,
+      "completed": true,
+      "efficiency_score": 50.314614606694306,
+      "focus_score": 61.93469618171975,
+      "interruptions": 3,
+      "environment_data": {
+        "hour_of_day": 15,
+        "day_of_week": 1,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250701_152237",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-01T15:22:37.267099",
+      "actual_duration": 19.362881539895014,
+      "completed": true,
+      "efficiency_score": 56.47337971028407,
+      "focus_score": 52.96156111238737,
+      "interruptions": 3,
+      "environment_data": {
+        "hour_of_day": 15,
+        "day_of_week": 1,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250701_101437",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-01T10:14:37.267099",
+      "actual_duration": 24.71836179324322,
+      "completed": false,
+      "efficiency_score": 67.99160237213707,
+      "focus_score": 71.01250085182446,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 10,
+        "day_of_week": 1,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250702_095537",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-02T09:55:37.267099",
+      "actual_duration": 18.03393531157723,
+      "completed": true,
+      "efficiency_score": 60.05392456390303,
+      "focus_score": 72.90575244542322,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 9,
+        "day_of_week": 2,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250702_184637",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-02T18:46:37.267099",
+      "actual_duration": 19.568193794224182,
+      "completed": true,
+      "efficiency_score": 83.69631769441197,
+      "focus_score": 85.55156526531758,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 18,
+        "day_of_week": 2,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250703_125337",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-03T12:53:37.267099",
+      "actual_duration": 20.96716337330126,
+      "completed": true,
+      "efficiency_score": 80.61584149695585,
+      "focus_score": 78.26870908605488,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 12,
+        "day_of_week": 3,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250703_151337",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-03T15:13:37.267099",
+      "actual_duration": 20.316684989663457,
+      "completed": true,
+      "efficiency_score": 67.62970885749799,
+      "focus_score": 81.7568704339387,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 15,
+        "day_of_week": 3,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250703_083237",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-03T08:32:37.267099",
+      "actual_duration": 19.705569248609464,
+      "completed": true,
+      "efficiency_score": 50.37233326720212,
+      "focus_score": 54.02979004430019,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 8,
+        "day_of_week": 3,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250703_090137",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-03T09:01:37.267099",
+      "actual_duration": 22.607579932306425,
+      "completed": false,
+      "efficiency_score": 56.5063374021986,
+      "focus_score": 52.70585956844904,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 9,
+        "day_of_week": 3,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250703_092437",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-03T09:24:37.267099",
+      "actual_duration": 17.26156173750857,
+      "completed": true,
+      "efficiency_score": 60.10704610074576,
+      "focus_score": 56.092805189547846,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 9,
+        "day_of_week": 3,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250704_115637",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-04T11:56:37.267099",
+      "actual_duration": 16.771830582381963,
+      "completed": true,
+      "efficiency_score": 39.40152164547795,
+      "focus_score": 51.82254290585755,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 11,
+        "day_of_week": 4,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250704_081537",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-04T08:15:37.267099",
+      "actual_duration": 24.980912733028852,
+      "completed": true,
+      "efficiency_score": 62.59443249548257,
+      "focus_score": 64.14825001453109,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 8,
+        "day_of_week": 4,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250704_154437",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-04T15:44:37.267099",
+      "actual_duration": 15.258638299708666,
+      "completed": true,
+      "efficiency_score": 62.977564467241166,
+      "focus_score": 55.205125610678756,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 15,
+        "day_of_week": 4,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250705_131937",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-05T13:19:37.267099",
+      "actual_duration": 16.06875959717099,
+      "completed": true,
+      "efficiency_score": 81.6549240702628,
+      "focus_score": 70.67236692801407,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 13,
+        "day_of_week": 5,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250705_094737",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-05T09:47:37.267099",
+      "actual_duration": 19.021851731590544,
+      "completed": true,
+      "efficiency_score": 81.48457274289328,
+      "focus_score": 90.37149488547,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 9,
+        "day_of_week": 5,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250705_091137",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-05T09:11:37.267099",
+      "actual_duration": 23.204865947360602,
+      "completed": true,
+      "efficiency_score": 77.32868525190415,
+      "focus_score": 70.749242266631,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 9,
+        "day_of_week": 5,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250706_114737",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-06T11:47:37.267099",
+      "actual_duration": 21.35248731366032,
+      "completed": true,
+      "efficiency_score": 82.87169726295947,
+      "focus_score": 81.9050376399558,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 11,
+        "day_of_week": 6,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250706_152237",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-06T15:22:37.267099",
+      "actual_duration": 20.971657913002147,
+      "completed": true,
+      "efficiency_score": 79.28303507866241,
+      "focus_score": 79.9753096021111,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 15,
+        "day_of_week": 6,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250706_143937",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-06T14:39:37.267099",
+      "actual_duration": 17.179995257739176,
+      "completed": true,
+      "efficiency_score": 72.77970197955494,
+      "focus_score": 78.68270315788308,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 14,
+        "day_of_week": 6,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250706_135837",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-06T13:58:37.267099",
+      "actual_duration": 22.38196654344099,
+      "completed": true,
+      "efficiency_score": 60.92148352311249,
+      "focus_score": 70.72452743676538,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 13,
+        "day_of_week": 6,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250706_143137",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-06T14:31:37.267099",
+      "actual_duration": 16.10315645995574,
+      "completed": false,
+      "efficiency_score": 63.00693170585385,
+      "focus_score": 71.18565873762722,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 14,
+        "day_of_week": 6,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250706_180337",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-06T18:03:37.267099",
+      "actual_duration": 20.989629379529575,
+      "completed": true,
+      "efficiency_score": 62.062313014966364,
+      "focus_score": 74.36358246189444,
+      "interruptions": 3,
+      "environment_data": {
+        "hour_of_day": 18,
+        "day_of_week": 6,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250707_155237",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-07T15:52:37.267099",
+      "actual_duration": 17.802773309569528,
+      "completed": false,
+      "efficiency_score": 87.3962161637355,
+      "focus_score": 74.96399246613808,
+      "interruptions": 3,
+      "environment_data": {
+        "hour_of_day": 15,
+        "day_of_week": 0,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250707_152837",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-07T15:28:37.267099",
+      "actual_duration": 19.363768485757824,
+      "completed": true,
+      "efficiency_score": 50.414197482802706,
+      "focus_score": 54.618178428998846,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 15,
+        "day_of_week": 0,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250707_172037",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-07T17:20:37.267099",
+      "actual_duration": 19.958644239791745,
+      "completed": true,
+      "efficiency_score": 58.787829941232715,
+      "focus_score": 66.82504665454051,
+      "interruptions": 3,
+      "environment_data": {
+        "hour_of_day": 17,
+        "day_of_week": 0,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250707_104337",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-07T10:43:37.267099",
+      "actual_duration": 20.775492933733723,
+      "completed": true,
+      "efficiency_score": 74.42769592042103,
+      "focus_score": 83.0854096194414,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 10,
+        "day_of_week": 0,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250707_155837",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-07T15:58:37.267099",
+      "actual_duration": 23.226190706360452,
+      "completed": true,
+      "efficiency_score": 75.5950516867194,
+      "focus_score": 79.54185164616834,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 15,
+        "day_of_week": 0,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250707_124637",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-07T12:46:37.267099",
+      "actual_duration": 15.469528791978396,
+      "completed": true,
+      "efficiency_score": 70.81488390729243,
+      "focus_score": 66.83138925506134,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 12,
+        "day_of_week": 0,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250708_180437",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-08T18:04:37.267099",
+      "actual_duration": 20.439415822337235,
+      "completed": true,
+      "efficiency_score": 58.24217227701284,
+      "focus_score": 50.7603316480703,
+      "interruptions": 3,
+      "environment_data": {
+        "hour_of_day": 18,
+        "day_of_week": 1,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250708_181137",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-08T18:11:37.267099",
+      "actual_duration": 16.101776128350707,
+      "completed": true,
+      "efficiency_score": 50.69336061325555,
+      "focus_score": 62.66127485435565,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 18,
+        "day_of_week": 1,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250708_115937",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-08T11:59:37.267099",
+      "actual_duration": 20.88162946788173,
+      "completed": true,
+      "efficiency_score": 48.77297325260801,
+      "focus_score": 61.889969845371375,
+      "interruptions": 3,
+      "environment_data": {
+        "hour_of_day": 11,
+        "day_of_week": 1,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250708_111037",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-08T11:10:37.267099",
+      "actual_duration": 17.036230312593318,
+      "completed": true,
+      "efficiency_score": 65.92933218357432,
+      "focus_score": 72.70244271165704,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 11,
+        "day_of_week": 1,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250708_161537",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-08T16:15:37.267099",
+      "actual_duration": 20.385963625540526,
+      "completed": true,
+      "efficiency_score": 89.13673621014057,
+      "focus_score": 77.76613567618838,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 16,
+        "day_of_week": 1,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250709_084737",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-09T08:47:37.267099",
+      "actual_duration": 20.1479172245166,
+      "completed": true,
+      "efficiency_score": 67.06562308509784,
+      "focus_score": 74.83839658672359,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 8,
+        "day_of_week": 2,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250709_085137",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-09T08:51:37.267099",
+      "actual_duration": 15.747090953019367,
+      "completed": true,
+      "efficiency_score": 60.777936506102684,
+      "focus_score": 75.68147065660989,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 8,
+        "day_of_week": 2,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250710_155037",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-10T15:50:37.267099",
+      "actual_duration": 16.542094507910196,
+      "completed": true,
+      "efficiency_score": 63.056560558422554,
+      "focus_score": 68.2845453352923,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 15,
+        "day_of_week": 3,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250710_183337",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-10T18:33:37.267099",
+      "actual_duration": 20.62955718356111,
+      "completed": true,
+      "efficiency_score": 61.93308396976478,
+      "focus_score": 53.856205143145985,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 18,
+        "day_of_week": 3,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250710_080437",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-10T08:04:37.267099",
+      "actual_duration": 16.749468654590988,
+      "completed": true,
+      "efficiency_score": 85.04994504820696,
+      "focus_score": 94.24039684213834,
+      "interruptions": 3,
+      "environment_data": {
+        "hour_of_day": 8,
+        "day_of_week": 3,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250710_105237",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-10T10:52:37.267099",
+      "actual_duration": 19.662083928094603,
+      "completed": true,
+      "efficiency_score": 45.46306631870152,
+      "focus_score": 59.60003062259387,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 10,
+        "day_of_week": 3,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250710_180337",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-10T18:03:37.267099",
+      "actual_duration": 19.05731012131474,
+      "completed": true,
+      "efficiency_score": 63.215261055250586,
+      "focus_score": 63.65269614672716,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 18,
+        "day_of_week": 3,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250710_103537",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-10T10:35:37.267099",
+      "actual_duration": 23.261917037050377,
+      "completed": false,
+      "efficiency_score": 64.83064445531403,
+      "focus_score": 74.07803012958132,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 10,
+        "day_of_week": 3,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250711_161737",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-11T16:17:37.267099",
+      "actual_duration": 20.125510395733265,
+      "completed": true,
+      "efficiency_score": 66.06992004905052,
+      "focus_score": 58.715356537826906,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 16,
+        "day_of_week": 4,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250711_131937",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-11T13:19:37.267099",
+      "actual_duration": 16.766188860771337,
+      "completed": true,
+      "efficiency_score": 52.81331146268138,
+      "focus_score": 56.03428189763591,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 13,
+        "day_of_week": 4,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250711_094737",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-11T09:47:37.267099",
+      "actual_duration": 18.05597804225315,
+      "completed": true,
+      "efficiency_score": 63.52486864915352,
+      "focus_score": 70.19703844648109,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 9,
+        "day_of_week": 4,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250712_142737",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-12T14:27:37.267099",
+      "actual_duration": 24.2025534284019,
+      "completed": true,
+      "efficiency_score": 60.657012604807164,
+      "focus_score": 69.40592436634533,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 14,
+        "day_of_week": 5,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250712_122737",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-12T12:27:37.267099",
+      "actual_duration": 24.447013092169783,
+      "completed": true,
+      "efficiency_score": 80.13155557863163,
+      "focus_score": 94.3139687714992,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 12,
+        "day_of_week": 5,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250713_173937",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-13T17:39:37.267099",
+      "actual_duration": 24.935051988867084,
+      "completed": true,
+      "efficiency_score": 55.92022888981762,
+      "focus_score": 64.79533156200947,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 17,
+        "day_of_week": 6,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250713_181537",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-13T18:15:37.267099",
+      "actual_duration": 20.13605271477903,
+      "completed": true,
+      "efficiency_score": 73.24078804665766,
+      "focus_score": 71.02205503307108,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 18,
+        "day_of_week": 6,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250713_145737",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-13T14:57:37.267099",
+      "actual_duration": 21.53986374005116,
+      "completed": true,
+      "efficiency_score": 46.605658141411446,
+      "focus_score": 53.154789043192864,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 14,
+        "day_of_week": 6,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250713_162937",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-13T16:29:37.267099",
+      "actual_duration": 23.045916450190994,
+      "completed": true,
+      "efficiency_score": 61.267117326950284,
+      "focus_score": 71.76443925536539,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 16,
+        "day_of_week": 6,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250713_182337",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-13T18:23:37.267099",
+      "actual_duration": 16.132504590783498,
+      "completed": true,
+      "efficiency_score": 80.44457494967128,
+      "focus_score": 73.18577867992202,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 18,
+        "day_of_week": 6,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250713_185837",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-13T18:58:37.267099",
+      "actual_duration": 18.19782567542148,
+      "completed": true,
+      "efficiency_score": 80.16713282727021,
+      "focus_score": 72.27306564106337,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 18,
+        "day_of_week": 6,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250714_114637",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-14T11:46:37.267099",
+      "actual_duration": 22.561457941833325,
+      "completed": true,
+      "efficiency_score": 49.74926275035092,
+      "focus_score": 62.665893421288736,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 11,
+        "day_of_week": 0,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250714_153737",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-14T15:37:37.267099",
+      "actual_duration": 20.369396286482633,
+      "completed": true,
+      "efficiency_score": 87.77247273504794,
+      "focus_score": 85.17522176050761,
+      "interruptions": 3,
+      "environment_data": {
+        "hour_of_day": 15,
+        "day_of_week": 0,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250714_154837",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-14T15:48:37.267099",
+      "actual_duration": 22.865387417452162,
+      "completed": true,
+      "efficiency_score": 53.626696520211105,
+      "focus_score": 59.38820568091161,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 15,
+        "day_of_week": 0,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250715_154237",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-15T15:42:37.267099",
+      "actual_duration": 16.938258654774184,
+      "completed": true,
+      "efficiency_score": 57.65177020822128,
+      "focus_score": 65.35227282442982,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 15,
+        "day_of_week": 1,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250715_114037",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-15T11:40:37.267099",
+      "actual_duration": 24.666303429151114,
+      "completed": true,
+      "efficiency_score": 95.72029790750035,
+      "focus_score": 92.49952310088591,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 11,
+        "day_of_week": 1,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250715_103237",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-15T10:32:37.267099",
+      "actual_duration": 24.148728293451057,
+      "completed": true,
+      "efficiency_score": 100,
+      "focus_score": 94.53536510560225,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 10,
+        "day_of_week": 1,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250715_174637",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-15T17:46:37.267099",
+      "actual_duration": 18.07321929706353,
+      "completed": true,
+      "efficiency_score": 61.607410492231764,
+      "focus_score": 50.93497714150326,
+      "interruptions": 3,
+      "environment_data": {
+        "hour_of_day": 17,
+        "day_of_week": 1,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250715_165437",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-15T16:54:37.267099",
+      "actual_duration": 17.12175944193288,
+      "completed": true,
+      "efficiency_score": 72.70452355602967,
+      "focus_score": 79.11278765283497,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 16,
+        "day_of_week": 1,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250715_185237",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-15T18:52:37.267099",
+      "actual_duration": 15.157241930962124,
+      "completed": true,
+      "efficiency_score": 74.34325280711204,
+      "focus_score": 77.31520860326218,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 18,
+        "day_of_week": 1,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250716_143837",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-16T14:38:37.267099",
+      "actual_duration": 17.469461706864408,
+      "completed": true,
+      "efficiency_score": 57.88618879624845,
+      "focus_score": 54.17759661247092,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 14,
+        "day_of_week": 2,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250716_094237",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-16T09:42:37.267099",
+      "actual_duration": 16.395717302460557,
+      "completed": true,
+      "efficiency_score": 82.9342707502781,
+      "focus_score": 86.67401306796299,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 9,
+        "day_of_week": 2,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250716_124937",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-16T12:49:37.267099",
+      "actual_duration": 18.77435346465484,
+      "completed": true,
+      "efficiency_score": 51.26513453166588,
+      "focus_score": 61.023656911419145,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 12,
+        "day_of_week": 2,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250716_114937",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-16T11:49:37.267099",
+      "actual_duration": 22.094570394448407,
+      "completed": true,
+      "efficiency_score": 90.57555619276482,
+      "focus_score": 82.422594732174,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 11,
+        "day_of_week": 2,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250716_182737",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-16T18:27:37.267099",
+      "actual_duration": 24.382765563036088,
+      "completed": true,
+      "efficiency_score": 62.39990945452155,
+      "focus_score": 54.23400980400366,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 18,
+        "day_of_week": 2,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250717_080037",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-17T08:00:37.267099",
+      "actual_duration": 20.82503260415178,
+      "completed": true,
+      "efficiency_score": 56.67901080490395,
+      "focus_score": 59.63777237247673,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 8,
+        "day_of_week": 3,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250717_125637",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-17T12:56:37.267099",
+      "actual_duration": 21.348575944534197,
+      "completed": true,
+      "efficiency_score": 65.29853596431549,
+      "focus_score": 62.40792006077669,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 12,
+        "day_of_week": 3,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250717_153537",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-17T15:35:37.267099",
+      "actual_duration": 19.3470166945022,
+      "completed": false,
+      "efficiency_score": 76.94978313066888,
+      "focus_score": 83.2567837073131,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 15,
+        "day_of_week": 3,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250717_165237",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-17T16:52:37.267099",
+      "actual_duration": 19.565926215923312,
+      "completed": true,
+      "efficiency_score": 81.7538401431761,
+      "focus_score": 79.2738625447861,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 16,
+        "day_of_week": 3,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250717_082537",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-17T08:25:37.267099",
+      "actual_duration": 21.71370531060653,
+      "completed": false,
+      "efficiency_score": 84.16970940585453,
+      "focus_score": 84.2865990271967,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 8,
+        "day_of_week": 3,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250718_180437",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-18T18:04:37.267099",
+      "actual_duration": 19.48188878720886,
+      "completed": true,
+      "efficiency_score": 84.17424424796948,
+      "focus_score": 70.67876352270699,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 18,
+        "day_of_week": 4,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250718_162437",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-18T16:24:37.267099",
+      "actual_duration": 24.982594616139707,
+      "completed": true,
+      "efficiency_score": 41.77900698954238,
+      "focus_score": 54.46187690318571,
+      "interruptions": 3,
+      "environment_data": {
+        "hour_of_day": 16,
+        "day_of_week": 4,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250718_083837",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-18T08:38:37.267099",
+      "actual_duration": 19.827955357002573,
+      "completed": true,
+      "efficiency_score": 79.72213188326897,
+      "focus_score": 75.98836429753545,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 8,
+        "day_of_week": 4,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250718_185937",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-18T18:59:37.267099",
+      "actual_duration": 15.571084658647408,
+      "completed": true,
+      "efficiency_score": 84.2509002587731,
+      "focus_score": 89.20713137969679,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 18,
+        "day_of_week": 4,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250719_101737",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-19T10:17:37.267099",
+      "actual_duration": 16.28041029172893,
+      "completed": true,
+      "efficiency_score": 80.50806793904634,
+      "focus_score": 67.56128442993166,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 10,
+        "day_of_week": 5,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250719_151137",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-19T15:11:37.267099",
+      "actual_duration": 20.242373827250745,
+      "completed": true,
+      "efficiency_score": 68.66578065243176,
+      "focus_score": 73.1387584479619,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 15,
+        "day_of_week": 5,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250719_142537",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-19T14:25:37.267099",
+      "actual_duration": 19.06447089052666,
+      "completed": true,
+      "efficiency_score": 62.023607585823825,
+      "focus_score": 59.346564616259435,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 14,
+        "day_of_week": 5,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250719_181337",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-19T18:13:37.267099",
+      "actual_duration": 22.484687860863158,
+      "completed": true,
+      "efficiency_score": 80.9395579558614,
+      "focus_score": 83.61378923839911,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 18,
+        "day_of_week": 5,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250720_103337",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-20T10:33:37.267099",
+      "actual_duration": 24.848641123666525,
+      "completed": true,
+      "efficiency_score": 100,
+      "focus_score": 91.16612980171348,
+      "interruptions": 3,
+      "environment_data": {
+        "hour_of_day": 10,
+        "day_of_week": 6,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250720_144237",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-20T14:42:37.267099",
+      "actual_duration": 20.1398462243841,
+      "completed": true,
+      "efficiency_score": 80.71058525982201,
+      "focus_score": 77.6788799854358,
+      "interruptions": 3,
+      "environment_data": {
+        "hour_of_day": 14,
+        "day_of_week": 6,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250721_164237",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-21T16:42:37.267099",
+      "actual_duration": 24.198710223518184,
+      "completed": true,
+      "efficiency_score": 55.86554458380827,
+      "focus_score": 70.68064421614608,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 16,
+        "day_of_week": 0,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250721_185437",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-21T18:54:37.267099",
+      "actual_duration": 24.916078611963158,
+      "completed": true,
+      "efficiency_score": 78.71592898596441,
+      "focus_score": 78.99413148021696,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 18,
+        "day_of_week": 0,
+        "time_period": "evening"
+      }
+    },
+    {
+      "session_id": "work_20250721_150237",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-21T15:02:37.267099",
+      "actual_duration": 19.2666765642529,
+      "completed": true,
+      "efficiency_score": 39.27000295745604,
+      "focus_score": 50.1200839785538,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 15,
+        "day_of_week": 0,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250721_092837",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-21T09:28:37.267099",
+      "actual_duration": 22.37497005282888,
+      "completed": true,
+      "efficiency_score": 49.86078595163391,
+      "focus_score": 55.92265262455804,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 9,
+        "day_of_week": 0,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250721_111237",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-21T11:12:37.267099",
+      "actual_duration": 16.06104425807518,
+      "completed": false,
+      "efficiency_score": 71.0363372214839,
+      "focus_score": 59.998457558662125,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 11,
+        "day_of_week": 0,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250721_090937",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-21T09:09:37.267099",
+      "actual_duration": 24.109378185796796,
+      "completed": true,
+      "efficiency_score": 72.68840839276274,
+      "focus_score": 87.32399828111375,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 9,
+        "day_of_week": 0,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250722_121437",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-22T12:14:37.267099",
+      "actual_duration": 17.65445029871209,
+      "completed": true,
+      "efficiency_score": 92.76399917874912,
+      "focus_score": 90.4463472243464,
+      "interruptions": 4,
+      "environment_data": {
+        "hour_of_day": 12,
+        "day_of_week": 1,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250722_130037",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-22T13:00:37.267099",
+      "actual_duration": 19.10885815098711,
+      "completed": true,
+      "efficiency_score": 64.27436131491396,
+      "focus_score": 73.12578488307452,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 13,
+        "day_of_week": 1,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250722_135237",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-22T13:52:37.267099",
+      "actual_duration": 24.437228445878507,
+      "completed": true,
+      "efficiency_score": 86.45057677368112,
+      "focus_score": 94.64676474312333,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 13,
+        "day_of_week": 1,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250723_111337",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-23T11:13:37.267099",
+      "actual_duration": 22.330010861295136,
+      "completed": true,
+      "efficiency_score": 55.39672436291346,
+      "focus_score": 67.29467057193338,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 11,
+        "day_of_week": 2,
+        "time_period": "morning"
+      }
+    },
+    {
+      "session_id": "work_20250723_130637",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-23T13:06:37.267099",
+      "actual_duration": 17.60653633200289,
+      "completed": true,
+      "efficiency_score": 64.05610691268234,
+      "focus_score": 58.26400024467813,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 13,
+        "day_of_week": 2,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250723_165137",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-23T16:51:37.267099",
+      "actual_duration": 21.412435375432516,
+      "completed": true,
+      "efficiency_score": 73.4093060422349,
+      "focus_score": 66.59850241316443,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 16,
+        "day_of_week": 2,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250724_120037",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-24T12:00:37.267099",
+      "actual_duration": 20.981892076844712,
+      "completed": true,
+      "efficiency_score": 70.61634538940606,
+      "focus_score": 80.8622765023639,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 12,
+        "day_of_week": 3,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250724_144437",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-24T14:44:37.267099",
+      "actual_duration": 22.573853895356404,
+      "completed": true,
+      "efficiency_score": 70.56948607633764,
+      "focus_score": 81.19008334424817,
+      "interruptions": 1,
+      "environment_data": {
+        "hour_of_day": 14,
+        "day_of_week": 3,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250724_145037",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-24T14:50:37.267099",
+      "actual_duration": 15.311599587543112,
+      "completed": true,
+      "efficiency_score": 66.67291525658968,
+      "focus_score": 66.27141647936935,
+      "interruptions": 0,
+      "environment_data": {
+        "hour_of_day": 14,
+        "day_of_week": 3,
+        "time_period": "afternoon"
+      }
+    },
+    {
+      "session_id": "work_20250724_081437",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-24T08:14:37.267099",
+      "actual_duration": 19.618413948741285,
+      "completed": true,
+      "efficiency_score": 49.668145326975406,
+      "focus_score": 58.343322316861624,
+      "interruptions": 2,
+      "environment_data": {
+        "hour_of_day": 8,
+        "day_of_week": 3,
+        "time_period": "morning"
+      }
+    }
+  ],
+  "generated_at": "2025-07-25T19:13:37.269985",
+  "total_sessions": 122,
+  "description": "30日間の豊富なテストデータ - Phase 4全機能テスト用"
+}

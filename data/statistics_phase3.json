@@ -1,0 +1,24 @@
+{
+  "sessions": [
+    {
+      "session_id": "20250724_171355_work",
+      "session_type": "work",
+      "start_time": "2025-07-24T17:13:55.163688",
+      "end_time": "2025-07-24T17:13:55.163692",
+      "actual_duration": 0,
+      "planned_duration": 0,
+      "completed": true,
+      "date": "2025-07-24"
+    },
+    {
+      "session_id": "20250724_171409_break",
+      "session_type": "break",
+      "start_time": "2025-07-24T17:14:09.758519",
+      "end_time": "2025-07-24T17:14:09.758524",
+      "actual_duration": 0,
+      "planned_duration": 0,
+      "completed": true,
+      "date": "2025-07-24"
+    }
+  ]
+}

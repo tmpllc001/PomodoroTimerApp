@@ -1,0 +1,350 @@
+{
+  "sessions": [
+    {
+      "session_id": "work_20250724_183655",
+      "type": "work",
+      "planned_duration": 25,
+      "start_time": "2025-07-24T18:36:55.034643",
+      "interactions": [
+        {
+          "timestamp": "2025-07-24T18:36:55.039235",
+          "type": "start_button",
+          "details": {
+            "session_type": "work"
+          },
+          "session_time": 0.004595
+        },
+        {
+          "timestamp": "2025-07-24T18:36:55.039743",
+          "type": "mouse_click",
+          "details": {
+            "button": "left"
+          },
+          "session_time": 0.005102
+        }
+      ],
+      "interruptions": [
+        {
+          "timestamp": "2025-07-24T18:36:55.039824",
+          "type": "manual_pause",
+          "duration": 30,
+          "session_time": 0.005183
+        }
+      ],
+      "focus_scores": [],
+      "environment_data": {},
+      "performance_metrics": {},
+      "end_time": "2025-07-24T18:36:57.042057",
+      "actual_duration": 0.0334569,
+      "completed": true,
+      "efficiency_score": 0,
+      "focus_score": 0.0
+    },
+    {
+      "session_id": "work_20250725_175812",
+      "type": "work",
+      "planned_duration": 1,
+      "start_time": "2025-07-25T17:58:12.002661",
+      "interactions": [
+        {
+          "timestamp": "2025-07-25T17:58:12.003221",
+          "type": "start_button",
+          "details": {
+            "session_type": "work"
+          },
+          "session_time": 0.000563
+        }
+      ],
+      "interruptions": [],
+      "focus_scores": [
+        {
+          "timestamp": "2025-07-25T17:58:21.989093",
+          "score": 50.3
+        },
+        {
+          "timestamp": "2025-07-25T17:58:31.989108",
+          "score": 50.7
+        },
+        {
+          "timestamp": "2025-07-25T17:58:41.988844",
+          "score": 51.0
+        },
+        {
+          "timestamp": "2025-07-25T17:58:51.989667",
+          "score": 51.3
+        },
+        {
+          "timestamp": "2025-07-25T17:59:01.988868",
+          "score": 51.7
+        },
+        {
+          "timestamp": "2025-07-25T17:59:11.989328",
+          "score": 52.0
+        }
+      ],
+      "environment_data": {},
+      "performance_metrics": {},
+      "end_time": "2025-07-25T17:59:11.989561",
+      "actual_duration": 0.9997816666666667,
+      "completed": true,
+      "efficiency_score": 100.0,
+      "focus_score": 51.2
+    },
+    {
+      "session_id": "work_20250725_201038",
+      "type": "work",
+      "planned_duration": 1,
+      "start_time": "2025-07-25T20:10:38.172355",
+      "interactions": [
+        {
+          "timestamp": "2025-07-25T20:10:38.173044",
+          "type": "start_button",
+          "details": {
+            "session_type": "work"
+          },
+          "session_time": 0.000692
+        }
+      ],
+      "interruptions": [],
+      "focus_scores": [
+        {
+          "timestamp": "2025-07-25T20:10:48.162801",
+          "score": 50.3
+        },
+        {
+          "timestamp": "2025-07-25T20:10:58.165547",
+          "score": 50.7
+        },
+        {
+          "timestamp": "2025-07-25T20:11:08.163355",
+          "score": 51.0
+        },
+        {
+          "timestamp": "2025-07-25T20:11:18.164209",
+          "score": 51.3
+        },
+        {
+          "timestamp": "2025-07-25T20:11:28.162258",
+          "score": 51.7
+        },
+        {
+          "timestamp": "2025-07-25T20:11:38.163944",
+          "score": 52.0
+        }
+      ],
+      "environment_data": {},
+      "performance_metrics": {},
+      "end_time": "2025-07-25T20:11:38.164116",
+      "actual_duration": 0.9998626833333333,
+      "completed": true,
+      "efficiency_score": 100.0,
+      "focus_score": 51.2
+    },
+    {
+      "session_id": "work_20250725_202840",
+      "type": "work",
+      "planned_duration": 1,
+      "start_time": "2025-07-25T20:28:40.513000",
+      "interactions": [
+        {
+          "timestamp": "2025-07-25T20:28:40.513581",
+          "type": "start_button",
+          "details": {
+            "session_type": "work"
+          },
+          "session_time": 0.000584
+        }
+      ],
+      "interruptions": [],
+      "focus_scores": [
+        {
+          "timestamp": "2025-07-25T20:28:50.508279",
+          "score": 50.3
+        },
+        {
+          "timestamp": "2025-07-25T20:29:00.507890",
+          "score": 50.7
+        },
+        {
+          "timestamp": "2025-07-25T20:29:10.506331",
+          "score": 51.0
+        },
+        {
+          "timestamp": "2025-07-25T20:29:20.507162",
+          "score": 51.3
+        },
+        {
+          "timestamp": "2025-07-25T20:29:30.509672",
+          "score": 51.7
+        },
+        {
+          "timestamp": "2025-07-25T20:29:40.508572",
+          "score": 52.0
+        }
+      ],
+      "environment_data": {},
+      "performance_metrics": {},
+      "end_time": "2025-07-25T20:29:40.508750",
+      "actual_duration": 0.9999291666666666,
+      "completed": true,
+      "efficiency_score": 100.0,
+      "focus_score": 51.2
+    },
+    {
+      "session_id": "work_20250725_203943",
+      "type": "work",
+      "planned_duration": 1,
+      "start_time": "2025-07-25T20:39:43.582718",
+      "interactions": [
+        {
+          "timestamp": "2025-07-25T20:39:43.583363",
+          "type": "start_button",
+          "details": {
+            "session_type": "work"
+          },
+          "session_time": 0.000648
+        }
+      ],
+      "interruptions": [],
+      "focus_scores": [
+        {
+          "timestamp": "2025-07-25T20:39:53.569740",
+          "score": 50.3
+        },
+        {
+          "timestamp": "2025-07-25T20:40:03.571114",
+          "score": 50.7
+        },
+        {
+          "timestamp": "2025-07-25T20:40:13.569886",
+          "score": 51.0
+        },
+        {
+          "timestamp": "2025-07-25T20:40:23.572151",
+          "score": 51.3
+        },
+        {
+          "timestamp": "2025-07-25T20:40:33.570181",
+          "score": 51.7
+        },
+        {
+          "timestamp": "2025-07-25T20:40:43.568667",
+          "score": 52.0
+        }
+      ],
+      "environment_data": {},
+      "performance_metrics": {},
+      "end_time": "2025-07-25T20:40:43.568812",
+      "actual_duration": 0.9997682333333333,
+      "completed": true,
+      "efficiency_score": 100.0,
+      "focus_score": 51.2
+    },
+    {
+      "session_id": "work_20250725_204218",
+      "type": "work",
+      "planned_duration": 1,
+      "start_time": "2025-07-25T20:42:18.409288",
+      "interactions": [
+        {
+          "timestamp": "2025-07-25T20:42:18.409884",
+          "type": "start_button",
+          "details": {
+            "session_type": "work"
+          },
+          "session_time": 0.000599
+        },
+        {
+          "timestamp": "2025-07-25T20:42:24.637372",
+          "type": "reset_button",
+          "details": {},
+          "session_time": 6.228091
+        }
+      ],
+      "interruptions": [],
+      "focus_scores": [],
+      "environment_data": {},
+      "performance_metrics": {},
+      "end_time": "2025-07-25T20:42:24.637629",
+      "actual_duration": 0.10380568333333334,
+      "completed": false,
+      "efficiency_score": 10.4,
+      "focus_score": 0.0
+    },
+    {
+      "session_id": "work_20250726_002909",
+      "type": "work",
+      "planned_duration": 1,
+      "start_time": "2025-07-26T00:29:09.649713",
+      "interactions": [
+        {
+          "timestamp": "2025-07-26T00:29:09.650278",
+          "type": "start_button",
+          "details": {
+            "session_type": "work"
+          },
+          "session_time": 0.000569
+        },
+        {
+          "timestamp": "2025-07-26T00:29:41.308241",
+          "type": "mouse_click",
+          "details": {
+            "button": "LeftButton"
+          },
+          "session_time": 31.658535
+        }
+      ],
+      "interruptions": [],
+      "focus_scores": [
+        {
+          "timestamp": "2025-07-26T00:29:19.646473",
+          "score": 50.3
+        },
+        {
+          "timestamp": "2025-07-26T00:29:29.650114",
+          "score": 50.7
+        },
+        {
+          "timestamp": "2025-07-26T00:29:39.648520",
+          "score": 51.0
+        },
+        {
+          "timestamp": "2025-07-26T00:29:49.650092",
+          "score": 51.3
+        },
+        {
+          "timestamp": "2025-07-26T00:29:59.648108",
+          "score": 51.7
+        },
+        {
+          "timestamp": "2025-07-26T00:30:09.647128",
+          "score": 52.0
+        }
+      ],
+      "environment_data": {},
+      "performance_metrics": {},
+      "end_time": "2025-07-26T00:30:09.647277",
+      "actual_duration": 0.9999593999999999,
+      "completed": true,
+      "efficiency_score": 100.0,
+      "focus_score": 51.2
+    }
+  ],
+  "metrics": {
+    "interaction_start_button": [
+      "2025-07-25T17:58:12.003232",
+      "2025-07-25T20:10:38.173055",
+      "2025-07-25T20:28:40.513591",
+      "2025-07-25T20:39:43.583373",
+      "2025-07-25T20:42:18.409894",
+      "2025-07-26T00:29:09.650289"
+    ],
+    "interaction_mouse_click": [
+      "2025-07-26T00:29:41.308256"
+    ],
+    "interaction_reset_button": [
+      "2025-07-25T20:42:24.637389"
+    ]
+  },
+  "last_updated": "2025-07-26T00:30:09.647369"
+}

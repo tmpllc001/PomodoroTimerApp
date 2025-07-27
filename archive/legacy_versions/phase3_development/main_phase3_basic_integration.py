@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Pomodoro Timer Phase 3 - タスク管理統合版
-統計ダッシュボード + タスク管理システム
+Pomodoro Timer Phase 3 - Basic Integration with Transparency
+統計ダッシュボード + タスク管理システム + 透明化機能
 """
 
 import sys
@@ -61,15 +61,11 @@ from features.tasks.task_widget import TaskWidget
 from features.tasks.task_integration import TaskIntegration
 from features.themes.theme_widget import ThemeWidget
 
-# 必要なパッケージのインポート確認
-try:
-    import matplotlib.pyplot as plt
-    import pandas as pd
-    DASHBOARD_AVAILABLE = True
-    logger.info("📊 ダッシュボード機能: 利用可能")
-except ImportError as e:
-    DASHBOARD_AVAILABLE = False
-    logger.warning(f"⚠️  ダッシュボード機能: 利用不可 ({e})")
+# matplotlib強制使用版
+import matplotlib.pyplot as plt
+import pandas as pd
+DASHBOARD_AVAILABLE = True
+logger.info("📊 ダッシュボード機能: matplotlibモード利用可能")
 
 # 音声システム（エラー対応版）
 AUDIO_AVAILABLE = False
@@ -94,6 +90,8 @@ class TaskSelectionWidget(QWidget):
         self.update_task_info()
     
     def setup_ui(self):
+        # 透明化機能初期化
+        self.setup_transparency_button()
         """UI設定"""
         layout = QVBoxLayout(self)
         
@@ -267,8 +265,10 @@ class PomodoroTimerPhase3Full(QMainWindow):
         logger.info("✅ Phase 3 完全版ポモドーロタイマー初期化完了")
         
     def setup_ui(self):
+        # 透明化機能初期化
+        self.setup_transparency_button()
         """UI設定"""
-        self.setWindowTitle("🍅 Pomodoro Timer Phase 3 - Full Edition")
+        self.setWindowTitle("🍅 Pomodoro Timer Phase 3 - Basic Integration")
         self.setGeometry(100, 100, 1000, 800)
         
         # 透明度・最前面設定
@@ -278,6 +278,9 @@ class PomodoroTimerPhase3Full(QMainWindow):
         # タブウィジェット
         self.tab_widget = QTabWidget()
         self.setCentralWidget(self.tab_widget)
+        
+        # 透明化機能初期化
+        self.setup_transparency_features()
         
         # メインタブ
         self.setup_main_tab()
@@ -1125,6 +1128,29 @@ class PomodoroTimerPhase3Full(QMainWindow):
             logger.info(f"🎨 テーマ適用完了: {current_theme.name}")
         except Exception as e:
             logger.error(f"❌ テーマ適用エラー: {e}")
+    def toggle_transparent_mode(self):
+        """透明化モード切り替え"""
+        self.transparent_mode = not self.transparent_mode
+        if hasattr(self, 'settings'):
+            self.settings.setValue("transparent_mode", self.transparent_mode)
+        self.apply_transparent_style()
+        
+        status = "ON" if self.transparent_mode else "OFF"
+        print(f"透明化モード: {status}")
+        logger.info(f"👻 透明化モード: {status}")
+        
+    def apply_transparent_style(self):
+        """透明化スタイル適用"""
+        if self.transparent_mode:
+            self.setWindowOpacity(0.6)
+        else:
+            self.setWindowOpacity(0.9)
+
+    def setup_transparency_button(self):
+        """透明化ボタンセットアップ"""
+        # 透明化は右クリックメニューから利用
+        pass
+
 
 def main():
     """メイン実行"""
@@ -1146,6 +1172,7 @@ def main():
         
         print("✅ Phase 3 完全版起動完了！")
         print("🍅 統合機能:")
+        print("  - 👻 透明化モード機能")
         print("  - 🪟 ウィンドウサイズ自動制御")
         print("  - 📊 統計機能")
         print("  - 🎵 音楽プリセット")

@@ -9,7 +9,7 @@ from PyQt6.QtCore import QObject, pyqtSignal
 from typing import Optional
 import logging
 
-from .task_manager import TaskManager, Task
+from .task_manager import TaskManager, Task, TaskStatus
 from ..statistics import PomodoroStatistics
 
 logger = logging.getLogger(__name__)
@@ -144,12 +144,12 @@ class TaskIntegration(QObject):
             
             # 進行中のタスク
             in_progress_tasks = self.task_manager.get_tasks_by_status(
-                self.task_manager.TaskStatus.IN_PROGRESS
+                TaskStatus.IN_PROGRESS
             )
             
             # 完了したタスク
             completed_tasks = self.task_manager.get_tasks_by_status(
-                self.task_manager.TaskStatus.COMPLETED
+                TaskStatus.COMPLETED
             )
             
             return {
@@ -179,12 +179,12 @@ class TaskIntegration(QObject):
         try:
             # 保留中のタスクを優先度順で取得
             pending_tasks = self.task_manager.get_tasks_by_status(
-                self.task_manager.TaskStatus.PENDING
+                TaskStatus.PENDING
             )
             
             # 進行中のタスクを追加
             in_progress_tasks = self.task_manager.get_tasks_by_status(
-                self.task_manager.TaskStatus.IN_PROGRESS
+                TaskStatus.IN_PROGRESS
             )
             
             # 優先度順でソート

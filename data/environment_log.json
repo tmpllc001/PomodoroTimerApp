@@ -1,0 +1,188 @@
+{
+  "records": [
+    {
+      "session_start": "2025-07-24T18:36:55.039142",
+      "session_type": "work",
+      "hour_of_day": 18,
+      "day_of_week": 3,
+      "day_name": "Thursday",
+      "month": 7,
+      "month_name": "July",
+      "season": "summer",
+      "date": "2025-07-24",
+      "time_period": "evening",
+      "weekend": false,
+      "session_end": "2025-07-24T18:36:57.044918",
+      "duration_minutes": 0,
+      "completed": false,
+      "efficiency_score": 0,
+      "focus_score": 0,
+      "interruptions": 1,
+      "interactions": 2
+    },
+    {
+      "session_start": "2025-07-25T17:58:12.003048",
+      "session_type": "work",
+      "hour_of_day": 17,
+      "day_of_week": 4,
+      "day_name": "Friday",
+      "month": 7,
+      "month_name": "July",
+      "season": "summer",
+      "date": "2025-07-25",
+      "time_period": "evening",
+      "weekend": false,
+      "session_end": "2025-07-25T17:59:11.997118",
+      "duration_minutes": 0,
+      "completed": false,
+      "efficiency_score": 0,
+      "focus_score": 0,
+      "interruptions": 0,
+      "interactions": 1
+    },
+    {
+      "session_start": "2025-07-25T20:10:38.172850",
+      "session_type": "work",
+      "hour_of_day": 20,
+      "day_of_week": 4,
+      "day_name": "Friday",
+      "month": 7,
+      "month_name": "July",
+      "season": "summer",
+      "date": "2025-07-25",
+      "time_period": "evening",
+      "weekend": false,
+      "session_end": "2025-07-25T20:11:38.165593",
+      "duration_minutes": 0,
+      "completed": false,
+      "efficiency_score": 0,
+      "focus_score": 0,
+      "interruptions": 0,
+      "interactions": 1
+    },
+    {
+      "session_start": "2025-07-25T20:28:40.513393",
+      "session_type": "work",
+      "hour_of_day": 20,
+      "day_of_week": 4,
+      "day_name": "Friday",
+      "month": 7,
+      "month_name": "July",
+      "season": "summer",
+      "date": "2025-07-25",
+      "time_period": "evening",
+      "weekend": false,
+      "session_end": "2025-07-25T20:29:40.510364",
+      "duration_minutes": 0,
+      "completed": false,
+      "efficiency_score": 0,
+      "focus_score": 0,
+      "interruptions": 0,
+      "interactions": 1
+    },
+    {
+      "session_start": "2025-07-25T20:39:43.583172",
+      "session_type": "work",
+      "hour_of_day": 20,
+      "day_of_week": 4,
+      "day_name": "Friday",
+      "month": 7,
+      "month_name": "July",
+      "season": "summer",
+      "date": "2025-07-25",
+      "time_period": "evening",
+      "weekend": false,
+      "session_end": "2025-07-25T20:40:43.570314",
+      "duration_minutes": 0,
+      "completed": false,
+      "efficiency_score": 0,
+      "focus_score": 0,
+      "interruptions": 0,
+      "interactions": 1
+    },
+    {
+      "session_start": "2025-07-25T20:42:18.409707",
+      "session_type": "work",
+      "hour_of_day": 20,
+      "day_of_week": 4,
+      "day_name": "Friday",
+      "month": 7,
+      "month_name": "July",
+      "season": "summer",
+      "date": "2025-07-25",
+      "time_period": "evening",
+      "weekend": false,
+      "session_end": "2025-07-25T20:42:24.639011",
+      "duration_minutes": 0,
+      "completed": false,
+      "efficiency_score": 0,
+      "focus_score": 0,
+      "interruptions": 0,
+      "interactions": 2
+    },
+    {
+      "session_start": "2025-07-26T00:29:09.650106",
+      "session_type": "work",
+      "hour_of_day": 0,
+      "day_of_week": 5,
+      "day_name": "Saturday",
+      "month": 7,
+      "month_name": "July",
+      "season": "summer",
+      "date": "2025-07-26",
+      "time_period": "night",
+      "weekend": true,
+      "session_end": "2025-07-26T00:30:09.649269",
+      "duration_minutes": 0,
+      "completed": false,
+      "efficiency_score": 0,
+      "focus_score": 0,
+      "interruptions": 0,
+      "interactions": 2
+    }
+  ],
+  "hourly_performance": {
+    "18": [
+      0.0
+    ],
+    "17": [
+      0.0
+    ],
+    "20": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "0": [
+      0.0
+    ]
+  },
+  "daily_performance": {
+    "3": [
+      0.0
+    ],
+    "4": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "5": [
+      0.0
+    ]
+  },
+  "monthly_performance": {
+    "7": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "last_updated": "2025-07-26T00:30:09.649341"
+}

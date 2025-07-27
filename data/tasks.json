@@ -1,5 +1,30 @@
 {
-  "tasks": [],
-  "current_task_id": null,
-  "last_updated": "2025-07-18T22:32:23.765169"
+  "tasks": [
+    {
+      "task_id": "22ab41cd-7020-42b4-a9f0-3c6263ecb6b0",
+      "title": "ポモドーロタイマー政策",
+      "description": "",
+      "priority": 5,
+      "estimated_pomodoros": 1,
+      "actual_pomodoros": 5,
+      "status": "in_progress",
+      "created_at": "2025-07-23T17:15:56.669735",
+      "completed_at": "2025-07-24T14:36:58.164322",
+      "tags": []
+    },
+    {
+      "task_id": "75561299-b1af-456a-a673-1eec190e78d1",
+      "title": "ポイントオプティマイザー制作",
+      "description": "",
+      "priority": 5,
+      "estimated_pomodoros": 1,
+      "actual_pomodoros": 0,
+      "status": "pending",
+      "created_at": "2025-07-23T17:16:21.236998",
+      "completed_at": null,
+      "tags": []
+    }
+  ],
+  "current_task_id": "22ab41cd-7020-42b4-a9f0-3c6263ecb6b0",
+  "last_updated": "2025-07-24T14:37:01.579508"
 }

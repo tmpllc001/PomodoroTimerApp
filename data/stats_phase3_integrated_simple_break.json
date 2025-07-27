@@ -1,0 +1,52 @@
+{
+  "sessions": [
+    {
+      "type": "work",
+      "duration": 1,
+      "completed_at": "2025-07-24T17:45:56.101152",
+      "date": "2025-07-24"
+    },
+    {
+      "type": "work",
+      "duration": 1,
+      "completed_at": "2025-07-25T17:59:11.998617",
+      "date": "2025-07-25"
+    },
+    {
+      "type": "work",
+      "duration": 1,
+      "completed_at": "2025-07-25T20:11:38.167103",
+      "date": "2025-07-25"
+    },
+    {
+      "type": "work",
+      "duration": 1,
+      "completed_at": "2025-07-25T20:29:40.512185",
+      "date": "2025-07-25"
+    },
+    {
+      "type": "work",
+      "duration": 1,
+      "completed_at": "2025-07-25T20:40:43.571959",
+      "date": "2025-07-25"
+    },
+    {
+      "type": "break",
+      "duration": 1,
+      "completed_at": "2025-07-25T20:41:43.613900",
+      "date": "2025-07-25"
+    },
+    {
+      "type": "work",
+      "duration": 1,
+      "completed_at": "2025-07-26T00:30:09.651802",
+      "date": "2025-07-26"
+    },
+    {
+      "type": "break",
+      "duration": 503307472,
+      "completed_at": "2025-07-26T00:30:39.697470",
+      "date": "2025-07-26"
+    }
+  ]
+}

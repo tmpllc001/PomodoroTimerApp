@@ -2,15 +2,18 @@
 # -*- coding: utf-8 -*-
 """
 統計可視化機能
-matplotlib/plotlyを使用したグラフ生成
+matplotlib強制使用版
 """
 
+# matplotlib強制使用
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import pandas as pd
 import numpy as np
+HAS_MATPLOTLIB = True
+
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Tuple
 import json
@@ -19,9 +22,11 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+# matplotlib使用のStatsVisualizerクラス
+
 class StatsVisualizer:
     """統計データの可視化を行うクラス"""
-    
+
     def __init__(self, data_file: str = "data/statistics.json"):
         self.data_file = Path(data_file)
         self.df = None
@@ -112,38 +117,39 @@ class StatsVisualizer:
         
         # ピボットテーブルを作成
         session_pivot = daily_stats.pivot(index='date', columns='session_type', values='session_id').fillna(0)
-        time_pivot = daily_stats.pivot(index='date', columns='session_type', values='actual_duration').fillna(0)
+        duration_pivot = daily_stats.pivot(index='date', columns='session_type', values='actual_duration').fillna(0)
         
-        # 全ての日付を含むようにreindex
+        # 全日付で統一（データがない日は0）
         session_pivot = session_pivot.reindex(date_range.date, fill_value=0)
-        time_pivot = time_pivot.reindex(date_range.date, fill_value=0)
+        duration_pivot = duration_pivot.reindex(date_range.date, fill_value=0)
         
-        # セッション数のグラフ
-        ax1.bar(session_pivot.index, session_pivot.get('work', 0), label='作業', color='#3498db', alpha=0.8)
-        ax1.bar(session_pivot.index, session_pivot.get('break', 0), 
-                bottom=session_pivot.get('work', 0), label='休憩', color='#2ecc71', alpha=0.8)
+        # グラフ1: セッション数
+        ax1.bar(range(len(session_pivot.index)), session_pivot.get('work', 0), 
+               alpha=0.7, label='作業セッション', color='#3498db')
+        ax1.bar(range(len(session_pivot.index)), session_pivot.get('break', 0), 
+               bottom=session_pivot.get('work', 0), alpha=0.7, label='休憩セッション', color='#2ecc71')
         
-        ax1.set_title(f'過去{days}日間のセッション数', fontsize=14, fontweight='bold')
+        ax1.set_title(f'過去{days}日間の日別セッション数')
+        ax1.set_xlabel('日付')
         ax1.set_ylabel('セッション数')
         ax1.legend()
+        ax1.set_xticks(range(len(session_pivot.index)))
+        ax1.set_xticklabels([d.strftime('%m/%d') for d in session_pivot.index], rotation=45)
         ax1.grid(True, alpha=0.3)
         
-        # 時間のグラフ
-        ax2.bar(time_pivot.index, time_pivot.get('work', 0), label='作業時間', color='#e74c3c', alpha=0.8)
-        ax2.bar(time_pivot.index, time_pivot.get('break', 0), 
-                bottom=time_pivot.get('work', 0), label='休憩時間', color='#f39c12', alpha=0.8)
+        # グラフ2: 作業時間
+        ax2.bar(range(len(duration_pivot.index)), 
+               duration_pivot.get('work', 0) / 60,  # 分に変換
+               alpha=0.7, label='作業時間', color='#e74c3c')
         
-        ax2.set_title(f'過去{days}日間の作業時間 (分)', fontsize=14, fontweight='bold')
-        ax2.set_ylabel('時間 (分)')
+        ax2.set_title(f'過去{days}日間の日別作業時間')
         ax2.set_xlabel('日付')
+        ax2.set_ylabel('作業時間（分）')
         ax2.legend()
+        ax2.set_xticks(range(len(duration_pivot.index)))
+        ax2.set_xticklabels([d.strftime('%m/%d') for d in duration_pivot.index], rotation=45)
         ax2.grid(True, alpha=0.3)
         
-        # X軸の日付フォーマット
-        for ax in [ax1, ax2]:
-            ax.tick_params(axis='x', rotation=45)
-            ax.xaxis.set_major_formatter(mdates.DateFormatter('%m/%d'))
-            
         plt.tight_layout()
         return fig
         
@@ -157,40 +163,33 @@ class StatsVisualizer:
             return fig
             
         # 週別集計
-        self.df['week'] = self.df['start_time'].dt.isocalendar().week
-        self.df['year'] = self.df['start_time'].dt.year
-        self.df['week_key'] = self.df['year'].astype(str) + '-W' + self.df['week'].astype(str).str.zfill(2)
+        work_df = self.df[self.df['session_type'] == 'work'].copy()
+        work_df['week'] = work_df['start_time'].dt.to_period('W')
         
-        weekly_stats = self.df.groupby(['week_key', 'session_type']).agg({
+        weekly_stats = work_df.groupby('week').agg({
             'session_id': 'count',
             'actual_duration': 'sum'
         }).reset_index()
         
-        # 作業時間のみでグラフを作成
-        work_stats = weekly_stats[weekly_stats['session_type'] == 'work']
+        # 最新のN週間
+        weekly_stats = weekly_stats.tail(weeks)
         
-        if not work_stats.empty:
-            ax.bar(work_stats['week_key'], work_stats['actual_duration'], 
-                   color='#3498db', alpha=0.8, label='作業時間')
-            
-            # トレンドラインを追加
-            x_pos = range(len(work_stats))
-            z = np.polyfit(x_pos, work_stats['actual_duration'], 1)
-            p = np.poly1d(z)
-            ax.plot(x_pos, p(x_pos), "r--", alpha=0.8, label='トレンド')
-            
-        ax.set_title('週別作業時間の推移', fontsize=14, fontweight='bold')
-        ax.set_ylabel('作業時間 (分)')
+        # グラフ作成
+        x_pos = range(len(weekly_stats))
+        ax.bar(x_pos, weekly_stats['actual_duration'] / 60, alpha=0.7, color='#9b59b6')
+        
+        ax.set_title(f'過去{weeks}週間の週別作業時間')
         ax.set_xlabel('週')
-        ax.legend()
+        ax.set_ylabel('作業時間（分）')
+        ax.set_xticks(x_pos)
+        ax.set_xticklabels([str(w) for w in weekly_stats['week']], rotation=45)
         ax.grid(True, alpha=0.3)
-        ax.tick_params(axis='x', rotation=45)
         
         plt.tight_layout()
         return fig
         
-    def create_hourly_heatmap(self) -> Figure:
-        """時間別作業パターンのヒートマップ"""
+    def create_heatmap_chart(self) -> Figure:
+        """時間帯×曜日のヒートマップを作成"""
         fig, ax = plt.subplots(figsize=(12, 8))
         
         if self.df.empty:
@@ -198,100 +197,72 @@ class StatsVisualizer:
                    transform=ax.transAxes, fontsize=16)
             return fig
             
-        # 時間と曜日を取得
-        work_sessions = self.df[self.df['session_type'] == 'work'].copy()
-        work_sessions['hour'] = work_sessions['start_time'].dt.hour
-        work_sessions['weekday'] = work_sessions['start_time'].dt.day_name()
+        # 作業セッションのみ
+        work_df = self.df[self.df['session_type'] == 'work'].copy()
         
-        # 時間別・曜日別の集計
-        heatmap_data = work_sessions.groupby(['weekday', 'hour']).size().unstack(fill_value=0)
+        # 時間帯と曜日を追加
+        work_df['hour'] = work_df['start_time'].dt.hour
+        work_df['weekday'] = work_df['start_time'].dt.dayofweek
         
-        # 曜日の順序を設定
-        weekday_order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-        heatmap_data = heatmap_data.reindex(weekday_order, fill_value=0)
+        # ヒートマップデータを作成
+        heatmap_data = np.zeros((24, 7))
         
-        # ヒートマップを作成
-        im = ax.imshow(heatmap_data.values, cmap='YlOrRd', aspect='auto')
+        for _, row in work_df.iterrows():
+            heatmap_data[row['hour'], row['weekday']] += 1
+            
+        # ヒートマップを描画
+        im = ax.imshow(heatmap_data, cmap='YlOrRd', aspect='auto')
         
-        # カラーバーを追加
-        cbar = plt.colorbar(im, ax=ax)
-        cbar.set_label('セッション数', rotation=270, labelpad=20)
+        # 軸設定
+        ax.set_xticks(range(7))
+        ax.set_xticklabels(['月', '火', '水', '木', '金', '土', '日'])
+        ax.set_yticks(range(0, 24, 2))
+        ax.set_yticklabels([f'{h:02d}:00' for h in range(0, 24, 2)])
         
-        # 軸ラベルを設定
-        ax.set_xticks(range(24))
-        ax.set_xticklabels([f'{h:02d}:00' for h in range(24)])
-        ax.set_yticks(range(len(weekday_order)))
-        ax.set_yticklabels(['月', '火', '水', '木', '金', '土', '日'])
+        ax.set_title('時間帯別活動ヒートマップ')
+        ax.set_xlabel('曜日')
+        ax.set_ylabel('時間帯')
         
-        ax.set_title('時間別作業パターン', fontsize=14, fontweight='bold')
-        ax.set_xlabel('時間')
-        ax.set_ylabel('曜日')
+        # カラーバー
+        plt.colorbar(im, ax=ax, label='セッション数')
         
-        # 値をヒートマップに表示
-        for i in range(len(weekday_order)):
-            for j in range(24):
-                value = heatmap_data.iloc[i, j] if j < len(heatmap_data.columns) else 0
-                if value > 0:
-                    ax.text(j, i, str(int(value)), ha='center', va='center', 
-                           color='white' if value > heatmap_data.values.max() * 0.7 else 'black')
-                    
         plt.tight_layout()
         return fig
         
     def create_productivity_chart(self) -> Figure:
-        """生産性指標のグラフ"""
-        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
+        """時間帯別生産性グラフを作成"""
+        fig, ax = plt.subplots(figsize=(12, 6))
         
         if self.df.empty:
-            for ax in [ax1, ax2]:
-                ax.text(0.5, 0.5, 'データがありません', ha='center', va='center', 
-                       transform=ax.transAxes, fontsize=16)
+            ax.text(0.5, 0.5, 'データがありません', ha='center', va='center', 
+                   transform=ax.transAxes, fontsize=16)
             return fig
             
-        # 完了率の計算
-        completion_stats = self.df.groupby('date').agg({
-            'completed': ['count', 'sum'],
-            'session_id': 'count'
-        }).reset_index()
+        # 作業セッションのみ
+        work_df = self.df[self.df['session_type'] == 'work'].copy()
+        work_df['hour'] = work_df['start_time'].dt.hour
         
-        completion_stats.columns = ['date', 'total_sessions', 'completed_sessions', 'session_count']
-        completion_stats['completion_rate'] = (completion_stats['completed_sessions'] / 
-                                               completion_stats['total_sessions'] * 100)
+        # 時間帯別平均作業時間
+        hourly_avg = work_df.groupby('hour')['actual_duration'].mean() / 60  # 分に変換
         
-        # 完了率のグラフ
-        ax1.plot(completion_stats['date'], completion_stats['completion_rate'], 
-                 marker='o', linewidth=2, markersize=6, color='#2ecc71')
-        ax1.axhline(y=100, color='r', linestyle='--', alpha=0.7, label='目標 (100%)')
-        ax1.set_title('セッション完了率の推移', fontsize=14, fontweight='bold')
-        ax1.set_ylabel('完了率 (%)')
-        ax1.set_xlabel('日付')
-        ax1.legend()
-        ax1.grid(True, alpha=0.3)
-        ax1.tick_params(axis='x', rotation=45)
+        # グラフ作成
+        ax.plot(hourly_avg.index, hourly_avg.values, marker='o', linewidth=2, markersize=6, color='#e67e22')
+        ax.fill_between(hourly_avg.index, hourly_avg.values, alpha=0.3, color='#e67e22')
         
-        # 平均セッション時間
-        avg_duration = self.df.groupby('date')['actual_duration'].mean().reset_index()
-        ax2.bar(avg_duration['date'], avg_duration['actual_duration'], 
-                color='#3498db', alpha=0.8)
-        ax2.axhline(y=25, color='r', linestyle='--', alpha=0.7, label='目標 (25分)')
-        ax2.set_title('平均セッション時間', fontsize=14, fontweight='bold')
-        ax2.set_ylabel('平均時間 (分)')
-        ax2.set_xlabel('日付')
-        ax2.legend()
-        ax2.grid(True, alpha=0.3)
-        ax2.tick_params(axis='x', rotation=45)
+        ax.set_title('時間帯別平均セッション時間')
+        ax.set_xlabel('時間帯')
+        ax.set_ylabel('平均セッション時間（分）')
+        ax.set_xticks(range(0, 24, 2))
+        ax.set_xticklabels([f'{h:02d}:00' for h in range(0, 24, 2)])
+        ax.grid(True, alpha=0.3)
         
         plt.tight_layout()
         return fig
         
-    def export_chart(self, figure: Figure, filename: str, format: str = 'png'):
+    def save_chart(self, figure: Figure, filepath: str, dpi: int = 300) -> Optional[str]:
         """グラフを画像ファイルとして保存"""
         try:
-            output_dir = Path("exports")
-            output_dir.mkdir(exist_ok=True)
-            
-            filepath = output_dir / f"{filename}.{format}"
-            figure.savefig(filepath, dpi=300, bbox_inches='tight')
+            figure.savefig(filepath, dpi=dpi, bbox_inches='tight')
             logger.info(f"📊 グラフ保存完了: {filepath}")
             return str(filepath)
             
@@ -322,21 +293,27 @@ class StatsVisualizer:
         else:
             most_productive_hour = None
             
-        # 最も良い日を計算
-        daily_work_time = work_sessions.groupby('date')['actual_duration'].sum()
-        best_day = daily_work_time.idxmax() if not daily_work_time.empty else None
+        # 最も生産的な日を計算
+        if not work_sessions.empty:
+            daily_work_time = work_sessions.groupby('date')['actual_duration'].sum()
+            best_day = daily_work_time.idxmax() if not daily_work_time.empty else None
+        else:
+            best_day = None
+            
+        total_sessions = len(self.df)
+        completed_sessions = sum(self.df.get('completed', [False] * len(self.df)))
         
         return {
-            'total_sessions': len(self.df),
-            'total_work_time': work_sessions['actual_duration'].sum(),
-            'total_break_time': break_sessions['actual_duration'].sum(),
-            'average_session_length': self.df['actual_duration'].mean(),
-            'completion_rate': (self.df['completed'].sum() / len(self.df) * 100) if len(self.df) > 0 else 0,
-            'best_day': best_day.strftime('%Y-%m-%d') if best_day else None,
+            'total_sessions': total_sessions,
+            'total_work_time': work_sessions['actual_duration'].sum() if not work_sessions.empty else 0,
+            'total_break_time': break_sessions['actual_duration'].sum() if not break_sessions.empty else 0,
+            'average_session_length': self.df['actual_duration'].mean() if not self.df.empty else 0,
+            'completion_rate': (completed_sessions / total_sessions * 100) if total_sessions > 0 else 0,
+            'best_day': str(best_day) if best_day else None,
             'most_productive_hour': f"{most_productive_hour:02d}:00" if most_productive_hour is not None else None
         }
 
-# Qt用のグラフウィジェット
+# matplotlib使用のQt用グラフウィジェット
 class StatsCanvas(FigureCanvas):
     """matplotlibのFigureをQtウィジェットとして表示"""
     

@@ -1,0 +1,18 @@
+# Worker3: Prediction Engine & Export Systems Requirements
+# Machine Learning Dependencies
+scikit-learn>=1.3.0
+pandas>=1.5.0
+numpy>=1.24.0
+joblib>=1.3.0
+
+# PDF Export Dependencies
+reportlab>=4.0.0
+
+# Excel Export Dependencies
+openpyxl>=3.1.0
+
+# Scheduling Dependencies
+APScheduler>=3.10.0
+
+# Email Dependencies (for automated reports)
+email-validator>=2.0.0

@@ -43,6 +43,215 @@
       "completed": true,
       "productivity_rating": null,
       "notes": null
+    },
+    {
+      "session_id": "289418f2-049d-4515-9b18-58f37f9b7cb2",
+      "session_type": "work",
+      "start_time": "2025-07-23T17:17:43.553425",
+      "end_time": "2025-07-23T17:18:43.553425",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "d92e5b94-ba1b-4699-b23b-893f4895a6fd",
+      "session_type": "break",
+      "start_time": "2025-07-23T17:18:44.554433",
+      "end_time": "2025-07-23T17:19:44.554433",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "daea3ea0-446e-4a4d-b64f-6e46a57f1d32",
+      "session_type": "work",
+      "start_time": "2025-07-23T17:21:13.693905",
+      "end_time": "2025-07-23T17:22:13.693905",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "0c50d157-65c5-4149-875d-f9859a71f4a6",
+      "session_type": "break",
+      "start_time": "2025-07-23T17:22:18.364619",
+      "end_time": "2025-07-23T17:23:18.364619",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "e3344337-f88d-4511-b77f-0bcd32ac719f",
+      "session_type": "work",
+      "start_time": "2025-07-23T17:23:19.364901",
+      "end_time": "2025-07-23T17:24:19.364901",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "933507fe-46c8-43d2-8934-bd3ec2c7cbdf",
+      "session_type": "work",
+      "start_time": "2025-07-23T17:37:57.396183",
+      "end_time": "2025-07-23T17:38:57.396183",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "6e50277d-72b6-4737-83c4-934122b2902c",
+      "session_type": "break",
+      "start_time": "2025-07-23T17:39:01.131070",
+      "end_time": "2025-07-23T17:40:01.131070",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "4aed54eb-de5d-4cf9-a09d-f923ffa5d0e5",
+      "session_type": "work",
+      "start_time": "2025-07-23T17:40:02.131432",
+      "end_time": "2025-07-23T17:41:02.131432",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "6d614bfd-529d-4d16-91b1-598694562efd",
+      "session_type": "break",
+      "start_time": "2025-07-23T17:41:05.146612",
+      "end_time": "2025-07-23T17:42:05.146612",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "fb45ba89-cbfc-4818-8a8a-bdd90c951b83",
+      "session_type": "work",
+      "start_time": "2025-07-24T14:35:58.162513",
+      "end_time": "2025-07-24T14:36:58.162513",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "d4f7ddca-b334-496e-b34a-530b01748f0a",
+      "session_type": "work",
+      "start_time": "2025-07-24T15:11:42.648777",
+      "end_time": "2025-07-24T15:12:42.648777",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "30b5131c-f414-46f2-913a-6b70d6626d97",
+      "session_type": "work",
+      "start_time": "2025-07-24T15:13:48.195872",
+      "end_time": "2025-07-24T15:14:48.195872",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "bd1a9c55-c040-4eb2-a4f9-37dccf4d3c30",
+      "session_type": "work",
+      "start_time": "2025-07-24T15:16:48.885187",
+      "end_time": "2025-07-24T15:17:48.885187",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "d5ea9265-7297-44e4-8312-6e74d39565a2",
+      "session_type": "work",
+      "start_time": "2025-07-24T15:18:24.492031",
+      "end_time": "2025-07-24T15:19:24.492031",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "4c86897d-a6d5-4668-9d2d-f8f9d8a2b0f7",
+      "session_type": "work",
+      "start_time": "2025-07-24T15:26:47.024705",
+      "end_time": "2025-07-24T15:27:47.024705",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "e9f77fed-380c-44e3-853a-86aae497a5e5",
+      "session_type": "work",
+      "start_time": "2025-07-24T15:29:00.962426",
+      "end_time": "2025-07-24T15:30:00.962426",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "f011de09-afa8-4352-8683-602cf6718e7b",
+      "session_type": "work",
+      "start_time": "2025-07-24T15:32:53.195753",
+      "end_time": "2025-07-24T15:33:53.195753",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "b9e650a9-36f1-44ad-aadf-5a50679d5393",
+      "session_type": "work",
+      "start_time": "2025-07-24T15:35:53.927689",
+      "end_time": "2025-07-24T15:36:53.927689",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
+    },
+    {
+      "session_id": "1a7af41d-31ee-4d83-829c-a9a71bac2006",
+      "session_type": "break",
+      "start_time": "2025-07-24T15:37:24.474436",
+      "end_time": "2025-07-24T15:38:24.474436",
+      "planned_duration": 1,
+      "actual_duration": 1,
+      "completed": true,
+      "productivity_rating": null,
+      "notes": null
     }
   ],
   "daily_stats": {
@@ -53,6 +262,26 @@
       "work_time": 27,
       "break_time": 5,
       "completed_sessions": 4,
+      "productivity_score": 0.0,
+      "focus_score": 0.0
+    },
+    "2025-07-23": {
+      "date": "2025-07-23",
+      "work_sessions": 5,
+      "break_sessions": 4,
+      "work_time": 5,
+      "break_time": 4,
+      "completed_sessions": 9,
+      "productivity_score": 0.0,
+      "focus_score": 0.0
+    },
+    "2025-07-24": {
+      "date": "2025-07-24",
+      "work_sessions": 9,
+      "break_sessions": 1,
+      "work_time": 9,
+      "break_time": 1,
+      "completed_sessions": 10,
       "productivity_score": 0.0,
       "focus_score": 0.0
     }
@@ -69,7 +298,19 @@
       "focus_score": 0.0,
       "best_day": null,
       "streak_days": 0
+    },
+    "2025-W30": {
+      "week_key": "2025-W30",
+      "work_sessions": 14,
+      "break_sessions": 5,
+      "work_time": 14,
+      "break_time": 5,
+      "completed_sessions": 19,
+      "productivity_score": 0.0,
+      "focus_score": 0.0,
+      "best_day": null,
+      "streak_days": 0
     }
   },
-  "last_updated": "2025-07-18T21:45:51.582138"
+  "last_updated": "2025-07-24T15:38:24.474583"
 }

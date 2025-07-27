@@ -69,7 +69,11 @@ class TaskItemWidget(QWidget):
             'completed': '✅',
             'cancelled': '❌'
         }
-        status_label = QLabel(status_map.get(self.task.status, '❓'))
+        # ステータス値を正規化
+        status_value = self.task.status
+        if hasattr(status_value, 'value'):
+            status_value = status_value.value
+        status_label = QLabel(status_map.get(status_value, '❓'))
         status_label.setFixedWidth(20)
         main_layout.addWidget(status_label)
         
@@ -438,7 +442,12 @@ class TaskWidget(QWidget):
             
             # タスクを取得してソート
             tasks = self.task_manager.get_all_tasks()
-            tasks.sort(key=lambda t: (t.status == 'completed', -t.priority, t.created_at))
+            tasks.sort(key=lambda t: (
+                # ステータス値を正規化してからソート
+                (t.status.value if hasattr(t.status, 'value') else t.status) == 'completed', 
+                -t.priority, 
+                t.created_at
+            ))
             
             # タスクアイテムを作成
             for task in tasks:

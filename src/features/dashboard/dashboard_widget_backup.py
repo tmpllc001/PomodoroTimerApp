@@ -712,7 +712,10 @@ class DashboardWidget(QWidget):
                 
             # バックグラウンドでグラフを生成
             self.chart_thread = ChartGeneratorThread(self.visualizer, chart_type, **kwargs)
-            self.chart_thread.chartReady.connect(self.on_chart_ready)
+            # matplotlib使用可能：
+                self.chart_thread.chartReady.connect(self.on_chart_ready)
+            else:
+                self.chart_thread.simpleChartReady.connect(self.on_simple_chart_ready)
             self.chart_thread.start()
             
         except Exception as e:
@@ -832,19 +835,30 @@ class DashboardWidget(QWidget):
                 try:
                     filename = Path(export_dir) / f"{name}.{file_format}"
                     
-                    # グラフを生成
-                    if chart_type == 'daily':
-                        figure = self.visualizer.create_daily_chart(kwargs['days'])
-                    elif chart_type == 'weekly':
-                        figure = self.visualizer.create_weekly_chart(kwargs['weeks'])
-                    elif chart_type == 'heatmap':
-                        figure = self.visualizer.create_hourly_heatmap()
-                    elif chart_type == 'productivity':
-                        figure = self.visualizer.create_productivity_chart()
-                    
-                    # ファイルを保存
-                    figure.savefig(filename, dpi=dpi, bbox_inches='tight')
-                    plt.close(figure)  # メモリ解放
+                    # matplotlib使用可能：
+                        # グラフを生成
+                        if chart_type == 'daily':
+                            figure = self.visualizer.create_daily_chart(kwargs['days'])
+                        elif chart_type == 'weekly':
+                            figure = self.visualizer.create_weekly_chart(kwargs['weeks'])
+                        elif chart_type == 'heatmap':
+                            figure = self.visualizer.create_hourly_heatmap()
+                        elif chart_type == 'productivity':
+                            figure = self.visualizer.create_productivity_chart()
+                        
+                        # ファイルを保存
+                        figure.savefig(filename, dpi=dpi, bbox_inches='tight')
+                        plt.close(figure)  # メモリ解放
+                    else:
+                        # 簡易チャートを生成してエクスポート
+                        chart_data = self.visualizer.get_simple_chart_data(chart_type, **kwargs)
+                        simple_chart = SimpleChartWidget()
+                        simple_chart.set_chart_data(chart_type, chart_data)
+                        simple_chart.resize(800, 600)
+                        
+                        # QPixmapでキャプチャして保存
+                        pixmap = simple_chart.grab()
+                        pixmap.save(str(filename), file_format.upper())
                     
                 except Exception as e:
                     logger.error(f"❌ {name} エクスポートエラー: {e}")
