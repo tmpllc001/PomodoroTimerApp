@@ -19,7 +19,7 @@ jobs:
             windows-specific: true
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
@@ -30,8 +30,10 @@ jobs:
       if: runner.os == 'Linux'
       run: |
         sudo apt-get update
-        sudo apt-get install -y xvfb libgl1-mesa-glx
+        sudo apt-get install -y xvfb libgl1-mesa-dev libglu1-mesa-dev libegl1-mesa-dev
         sudo apt-get install -y libasound2-dev pulseaudio
+        sudo apt-get install -y libqt6-base-dev qt6-base-dev libqt6-multimedia-dev
+        sudo apt-get install -y libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0
         # Start virtual display
         export DISPLAY=:99
         Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
@@ -77,7 +79,7 @@ jobs:
         python -c "import PyQt6; print('PyQt6 available')"
         # pytest tests/test_timer_model.py tests/test_audio_manager.py -v --tb=short
       env:
-        PYTHONPATH: ${{ github.workspace }}/src
+        PYTHONPATH: ${{ github.workspace }}
     
     - name: Run integration tests (Linux)
       if: runner.os == 'Linux'
@@ -88,7 +90,7 @@ jobs:
       env:
         DISPLAY: ':99.0'
         QT_QPA_PLATFORM: offscreen
-        PYTHONPATH: ${{ github.workspace }}/src
+        PYTHONPATH: ${{ github.workspace }}
     
     - name: Run Windows-specific tests
       if: matrix.windows-specific == true
@@ -97,7 +99,7 @@ jobs:
         python -c "import platform; print(f'Platform: {platform.system()} {platform.release()}')"
         # pytest tests/test_windows_compatibility.py -v --tb=short -m "not slow"
       env:
-        PYTHONPATH: ${{ github.workspace }}/src
+        PYTHONPATH: ${{ github.workspace }}
     
     - name: Run performance tests
       run: |
@@ -105,7 +107,7 @@ jobs:
         python -c "import time; start=time.time(); import pomodoro_phase3_final_integrated_simple_break; print(f'Import time: {time.time()-start:.2f}s')"
         # pytest tests/test_performance.py -v --tb=short -m "not benchmark"
       env:
-        PYTHONPATH: ${{ github.workspace }}/src
+        PYTHONPATH: ${{ github.workspace }}
     
     - name: Run tests with coverage
       if: matrix.python-version == '3.11' && matrix.os == 'ubuntu-latest'
@@ -117,7 +119,7 @@ jobs:
       env:
         DISPLAY: ':99.0'
         QT_QPA_PLATFORM: offscreen
-        PYTHONPATH: ${{ github.workspace }}/src
+        PYTHONPATH: ${{ github.workspace }}
     
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
@@ -130,7 +132,7 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -165,7 +167,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -284,7 +286,7 @@ jobs:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Download all artifacts
       uses: actions/download-artifact@v4

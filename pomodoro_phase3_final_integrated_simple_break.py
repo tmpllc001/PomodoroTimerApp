@@ -535,9 +535,9 @@ class SimpleBreakWindow(QMainWindow):
             activity = self.content_manager.get_random_activity()
             self.tip_label.setText(f"まもなく終了 {activity}")
         
-        # 最後3秒でミニマルウィンドウを表示してカウントダウン
+        # 最後3秒で休憩ウィンドウ内でカウントダウン表示
         if self.time_left <= 3 and self.time_left > 0:
-            self.show_minimal_countdown()
+            self.show_break_countdown()
         
         # 終了
         if self.time_left <= 0:
@@ -650,6 +650,63 @@ class SimpleBreakWindow(QMainWindow):
         tip = self.content_manager.get_random_tip()
         self.tip_label.setText(tip)
     
+    def show_break_countdown(self):
+        """休憩ウィンドウ内でカウントダウン表示"""
+        if not hasattr(self, 'countdown_overlay'):
+            # カウントダウンオーバーレイを作成（初回のみ）
+            self.countdown_overlay = QLabel(self)
+            self.countdown_overlay.setFont(QFont("Arial", 24, QFont.Weight.Bold))
+            self.countdown_overlay.setAlignment(Qt.AlignmentFlag.AlignCenter)
+            self.countdown_overlay.setStyleSheet("""
+                QLabel {
+                    color: #FF6B6B; 
+                    background: rgba(0, 0, 0, 150);
+                    border: 2px solid rgba(255, 107, 107, 100);
+                    border-radius: 30px;
+                    min-width: 60px;
+                    min-height: 60px;
+                }
+            """)
+            
+            # オーバーレイの位置を設定（ウィンドウ中央下部）
+            overlay_size = 60
+            x = (self.width() - overlay_size) // 2
+            y = self.height() - overlay_size - 20
+            self.countdown_overlay.setGeometry(x, y, overlay_size, overlay_size)
+        
+        # カウントダウン数字を表示
+        self.countdown_overlay.setText(str(self.time_left))
+        self.countdown_overlay.show()
+        
+        # アニメーション効果
+        try:
+            from PyQt6.QtCore import QPropertyAnimation, QEasingCurve
+            
+            if hasattr(self, 'countdown_animation'):
+                self.countdown_animation.stop()
+            
+            self.countdown_animation = QPropertyAnimation(self.countdown_overlay, b"geometry")
+            self.countdown_animation.setDuration(300)
+            self.countdown_animation.setEasingCurve(QEasingCurve.Type.OutBounce)
+            
+            # 現在のジオメトリ
+            current_rect = self.countdown_overlay.geometry()
+            
+            # 縮小→拡大効果
+            shrink_rect = current_rect
+            shrink_rect.setWidth(int(current_rect.width() * 0.8))
+            shrink_rect.setHeight(int(current_rect.height() * 0.8))
+            shrink_rect.moveCenter(current_rect.center())
+            
+            self.countdown_animation.setStartValue(shrink_rect)
+            self.countdown_animation.setEndValue(current_rect)
+            self.countdown_animation.start()
+            
+        except Exception as e:
+            logger.error(f"休憩カウントダウンアニメーションエラー: {e}")
+        
+        logger.info(f"🔴 休憩ウィンドウ内カウントダウン表示: {self.time_left}秒")
+    
     def edit_content(self):
         """コンテンツ編集ダイアログを表示"""
         dialog = BreakContentEditorDialog(self.content_manager, self)
@@ -661,6 +718,8 @@ class SimpleBreakWindow(QMainWindow):
         """ウィンドウ終了時"""
         if hasattr(self, 'timer'):
             self.timer.stop()
+        if hasattr(self, 'countdown_animation'):
+            self.countdown_animation.stop()
         event.accept()
 
 
@@ -9219,12 +9278,12 @@ class MainWindow(QMainWindow):
             QMessageBox.information(self, "休憩時間", f"☕ {break_name}の時間です！({duration_minutes}分)")
     
     def on_break_window_finished(self):
-        """休憩ウィンドウ終了時の処理 - 3秒カウントダウンして作業セッション開始"""
+        """休憩ウィンドウ終了時の処理 - 直接作業セッション開始"""
         logger.info("✅ シンプル休憩ウィンドウ自然終了")
         self.break_window = None
         
-        # 3秒カウントダウンを開始
-        self.show_work_start_countdown()
+        # 直接作業セッションを開始（カウントダウンは休憩ウィンドウ内で済んでいる）
+        self.on_work_start_countdown_finished()
     
     def show_work_start_countdown(self):
         """作業開始前の3秒カウントダウン表示"""
@@ -9270,8 +9329,8 @@ class MainWindow(QMainWindow):
         logger.info("⏩ シンプル休憩ウィンドウスキップ")
         self.break_window = None
         
-        # スキップの場合も3秒カウントダウンを開始
-        self.show_work_start_countdown()
+        # スキップの場合は直接作業セッション開始
+        self.on_work_start_countdown_finished()
         
         # さりげない通知
         self.statusBar().showMessage("休憩をスキップしました", 2000)
