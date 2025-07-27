@@ -346,6 +346,7 @@ class SimpleBreakWindow(QMainWindow):
     
     break_finished = pyqtSignal()
     break_skipped = pyqtSignal()
+    show_countdown_requested = pyqtSignal(int)  # 残り秒数を送信
     
     def __init__(self, break_type: str = "short", duration_minutes: int = 5, task_manager=None):
         super().__init__()
@@ -534,6 +535,10 @@ class SimpleBreakWindow(QMainWindow):
             activity = self.content_manager.get_random_activity()
             self.tip_label.setText(f"まもなく終了 {activity}")
         
+        # 最後3秒でミニマルウィンドウを表示してカウントダウン
+        if self.time_left <= 3 and self.time_left > 0:
+            self.show_minimal_countdown()
+        
         # 終了
         if self.time_left <= 0:
             self.timer.stop()
@@ -551,6 +556,11 @@ class SimpleBreakWindow(QMainWindow):
         self.break_skipped.emit()
         self.close()
         logger.info("⏩ 休憩をスキップ")
+    
+    def show_minimal_countdown(self):
+        """ミニマルウィンドウでカウントダウン表示を要求"""
+        self.show_countdown_requested.emit(self.time_left)
+        logger.info(f"📱 ミニマルカウントダウン要求: {self.time_left}秒")
     
     def update_task_display(self):
         """タスク名表示更新"""
@@ -9190,6 +9200,7 @@ class MainWindow(QMainWindow):
             # シグナル接続
             self.break_window.break_finished.connect(self.on_break_window_finished)
             self.break_window.break_skipped.connect(self.on_break_window_skipped)
+            self.break_window.show_countdown_requested.connect(self.on_break_countdown_requested)
             
             # 表示
             self.break_window.show()
@@ -9264,6 +9275,22 @@ class MainWindow(QMainWindow):
         
         # さりげない通知
         self.statusBar().showMessage("休憩をスキップしました", 2000)
+    
+    def on_break_countdown_requested(self, seconds_left: int):
+        """休憩終了カウントダウン要求処理"""
+        try:
+            # ミニマルウィンドウが存在し、現在隠されている場合は一時的に表示
+            if hasattr(self, 'minimal_window') and self.minimal_window:
+                # ミニマルウィンドウを表示
+                self.minimal_window.show()
+                # カウントダウンを表示
+                self.minimal_window.show_countdown(seconds_left)
+                logger.info(f"📱 休憩終了カウントダウン表示: {seconds_left}秒")
+            else:
+                logger.warning("⚠️ ミニマルウィンドウが利用できません")
+                
+        except Exception as e:
+            logger.error(f"休憩カウントダウン表示エラー: {e}")
     
     def add_task(self):
         """タスク追加（イベント駆動更新）"""
