@@ -71,6 +71,30 @@
       "duration": 1691475152,
       "completed_at": "2025-07-27T10:43:32.665125",
       "date": "2025-07-27"
+    },
+    {
+      "type": "work",
+      "duration": 1,
+      "completed_at": "2025-07-27T14:17:38.867337",
+      "date": "2025-07-27"
+    },
+    {
+      "type": "break",
+      "duration": -1805001520,
+      "completed_at": "2025-07-27T14:18:08.899669",
+      "date": "2025-07-27"
+    },
+    {
+      "type": "work",
+      "duration": 1,
+      "completed_at": "2025-07-27T14:19:35.058665",
+      "date": "2025-07-27"
+    },
+    {
+      "type": "break",
+      "duration": 1,
+      "completed_at": "2025-07-27T14:20:35.091139",
+      "date": "2025-07-27"
     }
   ]
 }

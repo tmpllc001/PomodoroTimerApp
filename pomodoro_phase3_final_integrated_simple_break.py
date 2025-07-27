@@ -351,7 +351,25 @@ class SimpleBreakWindow(QMainWindow):
         super().__init__()
         
         self.break_type = break_type
-        self.duration_minutes = int(duration_minutes) if duration_minutes else 5
+        
+        # デバッグ：受信した値を確認
+        logger.info(f"📍 SimpleBreakWindow受信値: duration_minutes={duration_minutes} (type: {type(duration_minutes)})")
+        
+        # duration_minutesの値を検証・修正
+        try:
+            duration_minutes_int = int(duration_minutes) if duration_minutes else 5
+            # 異常に大きい値（タイムスタンプなど）をチェック
+            if duration_minutes_int > 1440:  # 24時間を超える場合は異常値
+                logger.warning(f"⚠️ 異常な duration_minutes 値を検出: {duration_minutes_int} → デフォルト値5に修正")
+                duration_minutes_int = 5
+            elif duration_minutes_int <= 0:  # 0以下も異常値
+                logger.warning(f"⚠️ 無効な duration_minutes 値を検出: {duration_minutes_int} → デフォルト値5に修正")
+                duration_minutes_int = 5
+            self.duration_minutes = duration_minutes_int
+        except (ValueError, TypeError) as e:
+            logger.warning(f"⚠️ duration_minutes変換エラー: {e} → デフォルト値5に修正")
+            self.duration_minutes = 5
+        
         self.time_left = self.duration_minutes * 60
         self.content_manager = SimpleBreakContentManager()
         self.task_manager = task_manager
@@ -494,8 +512,21 @@ class SimpleBreakWindow(QMainWindow):
         if self.time_left < 0:
             self.time_left = 0
         
+        # 異常に大きい値を保護（24時間を超える場合）
+        if self.time_left > 86400:  # 24時間 = 86400秒
+            logger.warning(f"⚠️ 異常な time_left 値を検出: {self.time_left} → 修正")
+            self.time_left = 300  # 5分にリセット
+        
         minutes = self.time_left // 60
         seconds = self.time_left % 60
+        
+        # 表示値も二重チェック
+        if minutes > 1440:  # 24時間を超える場合
+            logger.warning(f"⚠️ 異常な表示時間を検出: {minutes}分 → 5分に修正")
+            minutes = 5
+            seconds = 0
+            self.time_left = 300
+            
         self.time_label.setText(f"{minutes:02d}:{seconds:02d}")
         
         # 残り30秒でアドバイスを更新
