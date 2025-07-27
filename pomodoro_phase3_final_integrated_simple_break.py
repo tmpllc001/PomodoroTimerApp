@@ -351,10 +351,13 @@ class SimpleBreakWindow(QMainWindow):
         super().__init__()
         
         self.break_type = break_type
-        self.duration_minutes = duration_minutes
-        self.time_left = duration_minutes * 60
+        self.duration_minutes = int(duration_minutes) if duration_minutes else 5
+        self.time_left = self.duration_minutes * 60
         self.content_manager = SimpleBreakContentManager()
         self.task_manager = task_manager
+        
+        # デバッグ：初期化値を確認
+        logger.info(f"📍 SimpleBreakWindow初期化: duration_minutes={self.duration_minutes}, time_left={self.time_left}秒")
         
         # 設定管理
         from PyQt6.QtCore import QSettings
@@ -7632,12 +7635,14 @@ class TimerDataManager(QObject):
                 
                 self.time_left = int(self.long_break_minutes * 60)
                 # 長い休憩ウィンドウ表示シグナル
-                self.break_started.emit("long", self.long_break_minutes)
+                logger.info(f"📍 長い休憩シグナル発信: long_break_minutes={self.long_break_minutes}")
+                self.break_started.emit("long", int(self.long_break_minutes))
                 logger.info(f"🎉 サイクル{self.completed_cycles}完了！長い休憩の時間です")
             else:
                 self.time_left = int(self.break_minutes * 60)
                 # 短い休憩ウィンドウ表示シグナル
-                self.break_started.emit("short", self.break_minutes)
+                logger.info(f"📍 短い休憩シグナル発信: break_minutes={self.break_minutes}")
+                self.break_started.emit("short", int(self.break_minutes))
                 logger.info(f"✅ 作業セッション{self.session_count}完了！休憩の時間です")
         else:
             self.is_work_session = True
@@ -9138,6 +9143,9 @@ class MainWindow(QMainWindow):
             if self.break_window:
                 self.break_window.close()
                 self.break_window = None
+            
+            # デバッグ：duration_minutesの値を確認
+            logger.info(f"📍 休憩ウィンドウ作成: break_type={break_type}, duration_minutes={duration_minutes}")
             
             # 新しいシンプル休憩ウィンドウを作成
             self.break_window = SimpleBreakWindow(break_type, duration_minutes, self.task_manager)
