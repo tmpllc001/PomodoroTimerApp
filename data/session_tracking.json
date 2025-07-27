@@ -237,6 +237,34 @@
       "hour_of_day": 14,
       "day_of_week": 6,
       "date": "2025-07-27"
+    },
+    {
+      "timestamp": "2025-07-27T14:30:29.745411",
+      "session_id": "work_20250727_142929",
+      "type": "work",
+      "planned_duration": 1,
+      "actual_duration": 0,
+      "completed": false,
+      "focus_score": 0,
+      "efficiency_score": 0,
+      "interruptions": 0,
+      "hour_of_day": 14,
+      "day_of_week": 6,
+      "date": "2025-07-27"
+    },
+    {
+      "timestamp": "2025-07-27T14:30:59.773359",
+      "session_id": "",
+      "type": "work",
+      "planned_duration": 25,
+      "actual_duration": 0,
+      "completed": false,
+      "focus_score": 0,
+      "efficiency_score": 0,
+      "interruptions": 0,
+      "hour_of_day": 14,
+      "day_of_week": 6,
+      "date": "2025-07-27"
     }
   ],
   "daily_patterns": {
@@ -484,9 +512,37 @@
         "hour_of_day": 14,
         "day_of_week": 6,
         "date": "2025-07-27"
+      },
+      {
+        "timestamp": "2025-07-27T14:30:29.745411",
+        "session_id": "work_20250727_142929",
+        "type": "work",
+        "planned_duration": 1,
+        "actual_duration": 0,
+        "completed": false,
+        "focus_score": 0,
+        "efficiency_score": 0,
+        "interruptions": 0,
+        "hour_of_day": 14,
+        "day_of_week": 6,
+        "date": "2025-07-27"
+      },
+      {
+        "timestamp": "2025-07-27T14:30:59.773359",
+        "session_id": "",
+        "type": "work",
+        "planned_duration": 25,
+        "actual_duration": 0,
+        "completed": false,
+        "focus_score": 0,
+        "efficiency_score": 0,
+        "interruptions": 0,
+        "hour_of_day": 14,
+        "day_of_week": 6,
+        "date": "2025-07-27"
       }
     ]
   },
   "productivity_trends": [],
-  "last_updated": "2025-07-27T14:20:35.087316"
+  "last_updated": "2025-07-27T14:30:59.773527"
 }

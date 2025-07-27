@@ -724,13 +724,14 @@ class WorkStartCountdownWindow(QMainWindow):
     
     def update_countdown(self):
         """カウントダウン更新"""
-        self.count -= 1
-        
         if self.count > 0:
             self.countdown_label.setText(str(self.count))
             
             # アニメーション効果（縮小→拡大）
             self.animate_countdown()
+            
+            # カウント減算
+            self.count -= 1
         else:
             # カウントダウン終了
             self.timer.stop()
@@ -865,9 +866,9 @@ class SessionTemplateManager(QObject):
             },
             "demo_mode": {
                 "name": "🔬 デモモード",
-                "description": "1分作業 + 30秒休憩（テスト用）",
+                "description": "1分作業 + 1分休憩（テスト用）",
                 "work_minutes": 1,
-                "break_minutes": 0.5,
+                "break_minutes": 1,
                 "long_break_minutes": 1,
                 "sessions_until_long_break": 3,
                 "max_sessions": 10,

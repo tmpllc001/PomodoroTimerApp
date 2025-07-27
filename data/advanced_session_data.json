@@ -478,13 +478,64 @@
       "completed": true,
       "efficiency_score": 100.0,
       "focus_score": 51.2
+    },
+    {
+      "session_id": "work_20250727_142929",
+      "type": "work",
+      "planned_duration": 1,
+      "start_time": "2025-07-27T14:29:29.754885",
+      "interactions": [
+        {
+          "timestamp": "2025-07-27T14:29:29.755444",
+          "type": "start_button",
+          "details": {
+            "session_type": "work"
+          },
+          "session_time": 0.000563
+        }
+      ],
+      "interruptions": [],
+      "focus_scores": [
+        {
+          "timestamp": "2025-07-27T14:29:39.741072",
+          "score": 50.3
+        },
+        {
+          "timestamp": "2025-07-27T14:29:49.743658",
+          "score": 50.7
+        },
+        {
+          "timestamp": "2025-07-27T14:29:59.743099",
+          "score": 51.0
+        },
+        {
+          "timestamp": "2025-07-27T14:30:09.742209",
+          "score": 51.3
+        },
+        {
+          "timestamp": "2025-07-27T14:30:19.741279",
+          "score": 51.7
+        },
+        {
+          "timestamp": "2025-07-27T14:30:29.740923",
+          "score": 52.0
+        }
+      ],
+      "environment_data": {},
+      "performance_metrics": {},
+      "end_time": "2025-07-27T14:30:29.741085",
+      "actual_duration": 0.9997699999999999,
+      "completed": true,
+      "efficiency_score": 100.0,
+      "focus_score": 51.2
     }
   ],
   "metrics": {
     "interaction_start_button": [
       "2025-07-27T10:35:06.995048",
       "2025-07-27T10:42:02.634194",
-      "2025-07-27T14:18:35.065303"
+      "2025-07-27T14:18:35.065303",
+      "2025-07-27T14:29:29.755455"
     ],
     "interaction_mouse_click": [
       "2025-07-26T00:29:41.308256"
@@ -493,5 +544,5 @@
       "2025-07-25T20:42:24.637389"
     ]
   },
-  "last_updated": "2025-07-27T14:19:35.053653"
+  "last_updated": "2025-07-27T14:30:29.741175"
 }
