@@ -1,0 +1,22 @@
+{
+  "interruptions": [
+    {
+      "session_date": "2025-07-30",
+      "session_time": "09:22:43",
+      "total_interruptions": 1,
+      "interruption_types": {
+        "manual_pause": 1
+      },
+      "interruptions": [
+        {
+          "type": "manual_pause",
+          "start_time": "2025-07-30T09:21:43.299742",
+          "end_time": "2025-07-30T09:22:43.159782",
+          "duration_seconds": 59.86004,
+          "severity": "medium"
+        }
+      ]
+    }
+  ],
+  "last_updated": "2025-07-30T09:22:43.162603"
+}

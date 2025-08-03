@@ -17,6 +17,36 @@ from pathlib import Path
 from typing import Optional, Dict, Any, List, Tuple
 from collections import defaultdict, deque
 
+# アプリケーションパス管理
+try:
+    from app_paths import get_base_path, get_data_dir, get_resource_path, ensure_data_dirs, APP_NAME, APP_VERSION
+except ImportError:
+    # フォールバック: app_paths.pyが見つからない場合
+    def get_base_path() -> Path:
+        if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
+            return Path(sys._MEIPASS)
+        else:
+            return Path(__file__).parent
+    
+    def get_data_dir() -> Path:
+        if getattr(sys, 'frozen', False):
+            return Path(sys.executable).parent / 'data'
+        else:
+            return get_base_path() / 'data'
+    
+    def get_resource_path(relative_path: str) -> Path:
+        return get_base_path() / relative_path
+    
+    def ensure_data_dirs():
+        data_dir = get_data_dir()
+        data_dir.mkdir(exist_ok=True)
+        (data_dir / 'charts').mkdir(exist_ok=True)
+        (data_dir / 'reports').mkdir(exist_ok=True)
+        (data_dir / 'exports').mkdir(exist_ok=True)
+    
+    APP_NAME = "Pomodoro Timer"
+    APP_VERSION = "1.0.0"
+
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QVBoxLayout, QHBoxLayout, 
                            QWidget, QLabel, QPushButton, QSpinBox, QTabWidget,
                            QListWidget, QListWidgetItem, QLineEdit, QTextEdit,
@@ -29,16 +59,80 @@ from PyQt6.QtGui import QFont, QAction, QMouseEvent, QPixmap, QPainter
 # Visualization libraries
 try:
     import matplotlib
-    matplotlib.use('Qt5Agg')  # Use Qt backend for matplotlib
+    matplotlib.use('Agg')  # Use Agg backend (no GUI required)
     import matplotlib.pyplot as plt
     import matplotlib.dates as mdates
-    from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+    
+    # PyQt6対応のFigureCanvas
+    try:
+        from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas
+    except ImportError:
+        try:
+            # フォールバック: PyQt5 backend
+            from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+        except ImportError:
+            # 最終フォールバック: 基本的なFigureCanvas
+            from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+    
     from matplotlib.figure import Figure
     import numpy as np
     import pandas as pd
+    
+    # 日本語フォント設定（フォールバック対応）
+    import platform
+    import matplotlib.font_manager as fm
+    
+    def setup_japanese_fonts():
+        """日本語フォントセットアップ（利用可能フォントを確認）"""
+        system = platform.system()
+        
+        # 利用可能なフォント一覧を取得
+        available_fonts = [f.name for f in fm.fontManager.ttflist]
+        
+        # 日本語フォント候補
+        japanese_fonts = {
+            'Windows': ['MS Gothic', 'Yu Gothic', 'Meiryo', 'MS UI Gothic'],
+            'Darwin': ['Hiragino Sans', 'Hiragino Kaku Gothic Pro', 'Arial Unicode MS'],
+            'Linux': ['Noto Sans CJK JP', 'IPAGothic', 'TakaoGothic', 'DejaVu Sans']
+        }
+        
+        # システム別フォント選択
+        candidates = japanese_fonts.get(system, japanese_fonts['Linux'])
+        
+        # 利用可能なフォントをフィルタリング
+        usable_fonts = []
+        for font in candidates:
+            if font in available_fonts:
+                usable_fonts.append(font)
+        
+        # フォールバック: 汎用フォント追加
+        fallback_fonts = ['DejaVu Sans', 'Liberation Sans', 'Arial', 'sans-serif']
+        usable_fonts.extend(fallback_fonts)
+        
+        # フォント設定
+        plt.rcParams['font.family'] = usable_fonts
+        
+        # 日本語フォントが見つからない場合の警告
+        japanese_available = any(font in available_fonts for font in candidates[:-1])  # 最後のDejaVu Sans以外
+        if not japanese_available:
+            print("⚠️ 日本語フォントが見つかりません。英語表示にフォールバックします。")
+            return False
+        else:
+            print(f"✅ 日本語フォント設定完了: {usable_fonts[:3]}")
+            return True
+    
+    # フォント設定実行
+    japanese_font_available = setup_japanese_fonts()
+    
+    # マイナス記号の文字化け対策
+    plt.rcParams['axes.unicode_minus'] = False
+    
     MATPLOTLIB_AVAILABLE = True
+    print("✅ Matplotlib初期化完了（日本語フォント設定済み）")
 except Exception as e:
     MATPLOTLIB_AVAILABLE = False
+    japanese_font_available = False
+    print(f"⚠️ matplotlib not available: {e}")
     # Will use basic charts instead
 
 try:
@@ -47,6 +141,52 @@ try:
 except Exception as e:
     SEABORN_AVAILABLE = False
     # Will use matplotlib-only charts
+
+# 日本語テキスト翻訳関数（グローバル）
+# よく使用されるテキストの英語対訳辞書
+text_translations = {
+    '生産性タイムライン': 'Productivity Timeline',
+    'フォーカスヒートマップ': 'Focus Heatmap', 
+    '中断分析ダッシュボード': 'Interruption Analysis Dashboard',
+    'セッションパフォーマンス総合分析': 'Session Performance Analysis',
+    '📈 生産性トレンド分析': '📈 Productivity Trend Analysis',
+    '生産性スコア': 'Productivity Score',
+    'トレンド': 'Trend',
+    '平均': 'Average',
+    '日付': 'Date',
+    '時間': 'Hour',
+    '分': 'Min',
+    '秒': 'Sec',
+    '曜日': 'Day of Week',
+    'セッション数': 'Sessions',
+    '完了率': 'Completion Rate',  
+    'フォーカススコア': 'Focus Score',
+    '効率スコア': 'Efficiency Score',
+    '中断回数': 'Interruptions',
+    '作業セッション': 'Work Sessions',
+    '休憩セッション': 'Break Sessions',
+    '月曜日': 'Mon', '火曜日': 'Tue', '水曜日': 'Wed', '木曜日': 'Thu', '金曜日': 'Fri',
+    'プログラミング': 'Programming',
+    '会議': 'Meetings',
+    'メール処理': 'Email',
+    '資料作成': 'Documentation',
+    'その他': 'Others',
+    'タスク別時間配分': 'Time Distribution by Task',
+    '週間ポモドーロ統計': 'Weekly Pomodoro Stats'
+}
+
+def get_display_text(japanese_text: str, english_fallback: str = None) -> str:
+    """日本語フォントが利用できない場合は英語テキストを返す"""
+    if MATPLOTLIB_AVAILABLE and japanese_font_available:
+        return japanese_text
+    else:
+        return english_fallback or japanese_text.encode('ascii', 'ignore').decode('ascii') or 'Data'
+
+def translate_text(text: str) -> str:
+    """テキストを英語に翻訳（日本語フォント未対応時）"""
+    if MATPLOTLIB_AVAILABLE and japanese_font_available:
+        return text
+    return text_translations.get(text, text)
 
 # Worker3: Prediction Engine & Export Systems imports
 try:
@@ -116,7 +256,7 @@ class SimpleBreakContentManager:
     """シンプルな休憩コンテンツ管理"""
     
     def __init__(self):
-        self.content_file = Path("data/break_content.json")
+        self.content_file = get_data_dir() / "break_content.json"
         self.content = self.load_content()
         # デフォルトキーが存在することを保証
         if "simple_tips" not in self.content:
@@ -170,7 +310,7 @@ class SimpleBreakContentManager:
     def save_content(self):
         """コンテンツをファイルに保存"""
         try:
-            self.content_file.parent.mkdir(exist_ok=True)
+            # ディレクトリはensure_data_dirs()で作成済み
             with open(self.content_file, 'w', encoding='utf-8') as f:
                 json.dump(self.content, f, ensure_ascii=False, indent=2)
             logger.info("休憩コンテンツを保存しました")
@@ -1238,8 +1378,7 @@ class AdvancedDataCollector(QObject):
         super().__init__()
         
         # データファイル
-        self.data_file = Path("data/advanced_session_data.json")
-        self.data_file.parent.mkdir(exist_ok=True)
+        self.data_file = get_data_dir() / "advanced_session_data.json"
         
         # データ収集設定
         self.collection_interval = 10  # 10秒間隔でデータ収集
@@ -1530,8 +1669,7 @@ class SessionTracking(QObject):
     def __init__(self):
         super().__init__()
         
-        self.tracking_file = Path("data/session_tracking.json")
-        self.tracking_file.parent.mkdir(exist_ok=True)
+        self.tracking_file = get_data_dir() / "session_tracking.json"
         
         # セッション追跡データ
         self.session_history = []
@@ -2054,6 +2192,49 @@ class FocusScoreCalculator(QObject):
             recommendations.append("✅ 良好な集中状態を維持しています！")
             
         return recommendations
+    
+    def get_comprehensive_analysis(self) -> Dict[str, Any]:
+        """包括的なフォーカス分析データを取得"""
+        # 現在のインサイトを取得
+        insights = self.get_focus_insights()
+        
+        # 履歴データ（過去30日分）を取得
+        history = []
+        try:
+            # セッション追跡ファイルからデータ読み込み
+            tracking_file = get_data_dir() / "session_tracking.json"
+            if tracking_file.exists():
+                with open(tracking_file, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    sessions = data.get('session_history', [])
+                    
+                    # 過去30日のセッションをフィルタ
+                    cutoff_date = datetime.now() - timedelta(days=30)
+                    for session in sessions:
+                        session_date = datetime.fromisoformat(session.get('timestamp', ''))
+                        if session_date > cutoff_date:
+                            history.append({
+                                'date': session_date.strftime('%Y-%m-%d'),
+                                'focus_score': session.get('focus_score', 0),
+                                'interruptions': session.get('interruptions', 0),
+                                'duration': session.get('actual_duration', 0)
+                            })
+        except Exception as e:
+            logger.error(f"フォーカス履歴読み込みエラー: {e}")
+        
+        # 統計情報
+        focus_scores = [h['focus_score'] for h in history if h['focus_score'] > 0]
+        avg_focus = statistics.mean(focus_scores) if focus_scores else 0
+        
+        return {
+            'current_insights': insights,
+            'history': history,
+            'statistics': {
+                'average_focus_score': round(avg_focus, 1),
+                'total_sessions': len(history),
+                'high_focus_sessions': len([h for h in history if h['focus_score'] >= 80])
+            }
+        }
 
 
 class InterruptionTracker(QObject):
@@ -2066,8 +2247,7 @@ class InterruptionTracker(QObject):
     def __init__(self):
         super().__init__()
         
-        self.tracking_file = Path("data/interruption_tracking.json")
-        self.tracking_file.parent.mkdir(exist_ok=True)
+        self.tracking_file = get_data_dir() / "interruption_tracking.json"
         
         # 中断追跡データ
         self.interruptions = []
@@ -2341,6 +2521,75 @@ class InterruptionTracker(QObject):
         
         return recommendations.get(interruption_type, '中断パターンが検出されました。作業環境の改善を検討してください')
     
+    def get_interruption_analysis(self) -> Dict[str, Any]:
+        """中断分析データ取得"""
+        if not self.interruptions:
+            return {
+                'total_interruptions': 0,
+                'most_common_type': 'unknown',
+                'average_duration': 0,
+                'interruption_patterns': {},
+                'severity_distribution': {},
+                'recommendations': []
+            }
+        
+        # 全ての中断データを収集
+        all_interruptions = []
+        for session in self.interruptions:
+            all_interruptions.extend(session.get('interruptions', []))
+        
+        if not all_interruptions:
+            return {
+                'total_interruptions': 0,
+                'most_common_type': 'unknown', 
+                'average_duration': 0,
+                'interruption_patterns': {},
+                'severity_distribution': {},
+                'recommendations': []
+            }
+        
+        # 統計計算
+        total_count = len(all_interruptions)
+        
+        # タイプ別集計
+        type_counts = defaultdict(int)
+        durations = []
+        severity_counts = defaultdict(int)
+        
+        for interruption in all_interruptions:
+            int_type = interruption.get('type', 'unknown')
+            type_counts[int_type] += 1
+            
+            duration = interruption.get('duration_seconds', 0)
+            durations.append(duration)
+            
+            severity = interruption.get('severity', 'unknown')
+            severity_counts[severity] += 1
+        
+        # 最も多いタイプ
+        most_common_type = max(type_counts.items(), key=lambda x: x[1])[0] if type_counts else 'unknown'
+        
+        # 平均継続時間
+        avg_duration = sum(durations) / len(durations) if durations else 0
+        
+        # 推奨事項生成
+        recommendations = []
+        if avg_duration > 300:  # 5分以上
+            recommendations.append("長時間の中断が多いです。集中できる環境を整えることを推奨します。")
+        if type_counts.get('manual_pause', 0) > type_counts.get('inactivity', 0):
+            recommendations.append("手動一時停止が多いです。休憩のタイミングを見直してみてください。")
+        if total_count > 20:
+            recommendations.append("中断が頻繁です。通知やアラートの設定を見直すことを推奨します。")
+        
+        return {
+            'total_interruptions': total_count,
+            'most_common_type': most_common_type,
+            'average_duration': avg_duration,
+            'interruption_patterns': dict(type_counts),
+            'severity_distribution': dict(severity_counts),
+            'recommendations': recommendations
+        }
+    
     def get_interruption_summary(self, days: int = 7) -> Dict[str, Any]:
         """中断サマリー取得"""
         cutoff_date = datetime.now() - timedelta(days=days)
@@ -2419,8 +2668,7 @@ class EnvironmentLogger(QObject):
     def __init__(self):
         super().__init__()
         
-        self.env_file = Path("data/environment_log.json")
-        self.env_file.parent.mkdir(exist_ok=True)
+        self.env_file = get_data_dir() / "environment_log.json"
         
         # 環境データ
         self.environment_records = []
@@ -2797,6 +3045,125 @@ class EnvironmentLogger(QObject):
                 
         except Exception as e:
             logger.error(f"EnvironmentLogger データ保存エラー: {e}")
+    
+    def get_performance_analysis(self) -> Dict[str, Any]:
+        """パフォーマンス分析データ取得"""
+        if not self.environment_records:
+            return {
+                'time_analysis': {'best_period': 'unknown', 'all_periods': {}},
+                'day_analysis': {'best_day': 'unknown', 'weekday_vs_weekend': {}},
+                'seasonal_analysis': {'best_season': 'unknown', 'seasonal_scores': {}},
+                'recommendations': []
+            }
+        
+        # 時間帯分析
+        time_period_performance = defaultdict(list)
+        day_performance = defaultdict(list)  # 曜日別
+        seasonal_performance = defaultdict(list)  # 季節別
+        
+        for record in self.environment_records:
+            if record.get('session_type') != 'work':
+                continue
+                
+            efficiency = record.get('efficiency_score', 0)
+            focus = record.get('focus_score', 0)
+            performance = (efficiency + focus) / 2
+            
+            # 時間帯別
+            period = record.get('time_period', 'unknown')
+            time_period_performance[period].append(performance)
+            
+            # 曜日別  
+            day = record.get('day_of_week', 0)
+            day_performance[day].append(performance)
+            
+            # 季節別
+            season = record.get('season', 'unknown')
+            seasonal_performance[season].append(performance)
+        
+        # 最適時間帯を特定
+        best_period = 'unknown'
+        best_period_score = 0
+        all_periods = {}
+        
+        for period, scores in time_period_performance.items():
+            if scores:
+                avg_score = statistics.mean(scores)
+                all_periods[period] = {
+                    'average_score': round(avg_score, 1),
+                    'session_count': len(scores)
+                }
+                if avg_score > best_period_score:
+                    best_period = period
+                    best_period_score = avg_score
+        
+        # 曜日分析
+        day_names = ['月', '火', '水', '木', '金', '土', '日']
+        weekday_scores = []
+        weekend_scores = []
+        best_day = 'unknown'
+        best_day_score = 0
+        
+        for day, scores in day_performance.items():
+            if scores:
+                avg_score = statistics.mean(scores)
+                if avg_score > best_day_score:
+                    best_day = day_names[day] if day < len(day_names) else str(day)
+                    best_day_score = avg_score
+                
+                # 平日 vs 週末
+                if day < 5:  # 月-金
+                    weekday_scores.append(avg_score)
+                else:  # 土日
+                    weekend_scores.append(avg_score)
+        
+        # 季節分析
+        best_season = 'unknown'
+        best_season_score = 0
+        seasonal_scores = {}
+        
+        for season, scores in seasonal_performance.items():
+            if scores:
+                avg_score = statistics.mean(scores)
+                seasonal_scores[season] = round(avg_score, 1)
+                if avg_score > best_season_score:
+                    best_season = season
+                    best_season_score = avg_score
+        
+        # 推奨事項生成
+        recommendations = []
+        if best_period != 'unknown':
+            recommendations.append(f"{best_period}の時間帯が最も高いパフォーマンスを示しています。")
+        
+        if weekday_scores and weekend_scores:
+            weekday_avg = statistics.mean(weekday_scores)
+            weekend_avg = statistics.mean(weekend_scores)
+            if weekday_avg > weekend_avg + 5:
+                recommendations.append("平日の方が週末より集中できる傾向があります。")
+            elif weekend_avg > weekday_avg + 5:
+                recommendations.append("週末の方が平日より集中できる傾向があります。")
+        
+        if best_season != 'unknown':
+            recommendations.append(f"{best_season}の季節で最高のパフォーマンスを発揮しています。")
+        
+        return {
+            'time_analysis': {
+                'best_period': best_period,
+                'all_periods': all_periods
+            },
+            'day_analysis': {
+                'best_day': best_day,
+                'weekday_vs_weekend': {
+                    'weekday_average': round(statistics.mean(weekday_scores), 1) if weekday_scores else 0,
+                    'weekend_average': round(statistics.mean(weekend_scores), 1) if weekend_scores else 0
+                }
+            },
+            'seasonal_analysis': {
+                'best_season': best_season,
+                'seasonal_scores': seasonal_scores
+            },
+            'recommendations': recommendations
+        }
 
 
 class InteractiveReportsEngine(QObject):
@@ -2818,7 +3185,7 @@ class InteractiveReportsEngine(QObject):
         self.environment_logger = environment_logger
         
         # レポート設定
-        self.reports_dir = Path("data/reports")
+        self.reports_dir = get_data_dir() / "reports"
         self.reports_dir.mkdir(exist_ok=True)
         
         # レポートキャッシュ
@@ -3053,9 +3420,15 @@ class InteractiveReportsEngine(QObject):
         else:
             trend = 'insufficient_data'
         
+        # 日付を文字列に変換（JSONシリアライズ対応）
+        daily_scores_str = {
+            date.strftime('%Y-%m-%d'): score
+            for date, score in daily_averages.items()
+        }
+        
         return {
             'overall_trend': trend,
-            'daily_scores': daily_averages,
+            'daily_scores': daily_scores_str,
             'trend_analysis': self._analyze_productivity_trend(daily_averages)
         }
     
@@ -3220,12 +3593,24 @@ class AdvancedVisualization(QObject):
                     sns.set_palette("husl")
                 else:
                     plt.style.use('default')
+                
+                # グラフ全体のフォントサイズを調整（日本語対応）
+                plt.rcParams.update({
+                    'font.size': 10,
+                    'axes.titlesize': 12,
+                    'axes.labelsize': 10,
+                    'xtick.labelsize': 9,
+                    'ytick.labelsize': 9,
+                    'legend.fontsize': 9,
+                    'figure.titlesize': 14
+                })
+                
             except Exception as e:
                 logger.warning(f"📊 スタイル設定エラー: {e}")
                 plt.style.use('default')
         
         # 出力ディレクトリ
-        self.charts_dir = Path("data/charts")
+        self.charts_dir = get_data_dir() / "charts"
         self.charts_dir.mkdir(exist_ok=True)
         
         # フォールバック用カラーパレット
@@ -3265,7 +3650,7 @@ class AdvancedVisualization(QObject):
         
         # タイトル
         title_label = QLabel(title)
-        title_label.setAlignment(Qt.AlignCenter)
+        title_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         title_label.setStyleSheet("font-size: 16px; font-weight: bold; margin: 10px;")
         layout.addWidget(title_label)
         
@@ -3309,7 +3694,17 @@ class AdvancedVisualization(QObject):
         try:
             # データ取得
             report_data = self.reports_engine.generate_comprehensive_report(date_range)
-            productivity_data = report_data['detailed_sections']['productivity_trends']['daily_scores']
+            
+            # 安全にデータアクセス
+            productivity_data = {}
+            if 'detailed_sections' in report_data:
+                if 'productivity_trends' in report_data['detailed_sections']:
+                    if isinstance(report_data['detailed_sections']['productivity_trends'], dict):
+                        productivity_data = report_data['detailed_sections']['productivity_trends'].get('daily_scores', {})
+                    else:
+                        logger.warning("productivity_trends データ形式が不正です")
+            else:
+                logger.warning("detailed_sections が存在しません")
             
             if not productivity_data:
                 if self.matplotlib_available:
@@ -3343,7 +3738,7 @@ class AdvancedVisualization(QObject):
             
             # プロット
             ax.plot(datetime_dates, scores, marker='o', linewidth=2, markersize=6, 
-                   color='#2E86AB', label='生産性スコア')
+                   color='#2E86AB', label=translate_text('生産性スコア'))
             
             # トレンドライン追加
             if len(scores) > 2:
@@ -3351,17 +3746,17 @@ class AdvancedVisualization(QObject):
                 p = np.poly1d(z)
                 trend_scores = p(range(len(scores)))
                 ax.plot(datetime_dates, trend_scores, "--", alpha=0.7, 
-                       color='#A23B72', label='トレンド')
+                       color='#A23B72', label=translate_text('トレンド'))
             
             # 平均線
             avg_score = statistics.mean(scores)
             ax.axhline(y=avg_score, color='#F18F01', linestyle='-', alpha=0.7, 
-                      label=f'平均 ({avg_score:.1f})')
+                      label=f'{translate_text("平均")} ({avg_score:.1f})')
             
             # グラフ設定
-            ax.set_title('📈 生産性トレンド分析', fontsize=16, fontweight='bold', pad=20)
-            ax.set_xlabel('日付', fontsize=12)
-            ax.set_ylabel('生産性スコア', fontsize=12)
+            ax.set_title(translate_text('📈 生産性トレンド分析'), fontsize=16, fontweight='bold', pad=20)
+            ax.set_xlabel(translate_text('日付'), fontsize=12)
+            ax.set_ylabel(translate_text('生産性スコア'), fontsize=12)
             ax.legend()
             ax.grid(True, alpha=0.3)
             
@@ -4061,9 +4456,19 @@ class AdvancedVisualization(QObject):
             filename = f"{chart_type}_{timestamp}.{format_type}"
             filepath = self.charts_dir / filename
             
-            # 高解像度で保存
-            canvas.figure.savefig(filepath, dpi=300, bbox_inches='tight', 
-                                format=format_type, facecolor='white')
+            # canvas が FigureCanvas かどうかチェック
+            if hasattr(canvas, 'figure') and canvas.figure is not None:
+                # 高解像度で保存
+                canvas.figure.savefig(filepath, dpi=300, bbox_inches='tight', 
+                                    format=format_type, facecolor='white')
+            elif hasattr(canvas, 'print_figure'):
+                # alternative method for FigureCanvas
+                canvas.print_figure(filepath, dpi=300, bbox_inches='tight', 
+                                  format=format_type, facecolor='white')
+            else:
+                # QWidget の場合、スクリーンショットを撮る
+                pixmap = canvas.grab()
+                pixmap.save(str(filepath), format_type.upper())
             
             logger.info(f"📊 チャートエクスポート完了: {filename}")
             self.export_completed.emit(chart_type, str(filepath))
@@ -4833,7 +5238,7 @@ class CustomReportBuilder(QObject):
         self.comparison_analytics = comparison_analytics
         
         # テンプレート保存ディレクトリ
-        self.templates_dir = Path("data/report_templates")
+        self.templates_dir = get_data_dir() / "report_templates"
         self.templates_dir.mkdir(exist_ok=True)
         
         # デフォルトテンプレート
@@ -5541,7 +5946,7 @@ class PredictionEngine(QObject):
         self.focus_calculator = focus_calculator
         
         # モデル保存ディレクトリ
-        self.model_dir = Path("data/ml_models")
+        self.model_dir = get_data_dir() / "ml_models"
         self.model_dir.mkdir(exist_ok=True)
         
         # 予測モデル
@@ -6217,7 +6622,7 @@ class ReportExporter(QObject):
         self.comparison_analytics = comparison_analytics
         
         # エクスポート用ディレクトリ
-        self.export_dir = Path("data/exports")
+        self.export_dir = get_data_dir() / "exports"
         self.export_dir.mkdir(exist_ok=True)
         
         # テンプレート設定
@@ -6908,7 +7313,7 @@ class AutoReportScheduler(QObject):
             logger.warning("⏰ スケジューラー機能は無効です（ライブラリなし）")
         
         # 設定ファイル
-        self.config_file = Path("data/scheduler_config.json")
+        self.config_file = get_data_dir() / "scheduler_config.json"
         self.schedule_config = self.load_schedule_config()
         
         # レポート生成履歴
@@ -7379,7 +7784,7 @@ class AutoReportScheduler(QObject):
             retention_days = self.schedule_config.get("retention_days", 30)
             cutoff_date = datetime.now() - timedelta(days=retention_days)
             
-            export_dir = Path("data/exports")
+            export_dir = get_data_dir() / "exports"
             if not export_dir.exists():
                 return
             
@@ -7789,8 +8194,7 @@ class TaskManager(QObject):
     
     def __init__(self):
         super().__init__()
-        self.tasks_file = Path("data/tasks_phase3_integrated_simple_break.json")
-        self.tasks_file.parent.mkdir(exist_ok=True)
+        self.tasks_file = get_data_dir() / "tasks_phase3_integrated_simple_break.json"
         self.tasks = []
         self.load_tasks()
     
@@ -7857,8 +8261,7 @@ class StatisticsManager:
     """統計管理（Phase 4: 高度なデータ収集システム統合版）"""
     
     def __init__(self):
-        self.stats_file = Path("data/stats_phase3_integrated_simple_break.json")
-        self.stats_file.parent.mkdir(exist_ok=True)
+        self.stats_file = get_data_dir() / "stats_phase3_integrated_simple_break.json"
         self.sessions = []
         
         # Phase 4: 高度なデータ収集システム統合
@@ -9264,10 +9667,15 @@ class MainWindow(QMainWindow):
             # 表示
             self.break_window.show()
             
-            # 休憩タイマーを自動開始
+            # 休憩モードに切り替え（タイマーは継続）
+            if hasattr(self.timer_data, 'current_mode'):
+                self.timer_data.current_mode = 'break'
+                logger.info(f"🔄 休憩モードに切り替え: {break_type} ({duration_minutes}分)")
+            
+            # 休憩タイマーを開始（メインタイマーとは独立）
             if not self.timer_data.is_running:
                 self.timer_data.start_timer()
-                logger.info(f"⏰ 休憩タイマー自動開始: {break_type} ({duration_minutes}分)")
+                logger.info(f"⏰ 休憩タイマー開始: {break_type} ({duration_minutes}分)")
             
             logger.info(f"☕ シンプル休憩ウィンドウ表示: {break_type} ({duration_minutes}分)")
             
@@ -9278,12 +9686,20 @@ class MainWindow(QMainWindow):
             QMessageBox.information(self, "休憩時間", f"☕ {break_name}の時間です！({duration_minutes}分)")
     
     def on_break_window_finished(self):
-        """休憩ウィンドウ終了時の処理 - 直接作業セッション開始"""
+        """休憩ウィンドウ終了時の処理 - 次の作業フェイズへ移行"""
         logger.info("✅ シンプル休憩ウィンドウ自然終了")
         self.break_window = None
         
-        # 直接作業セッションを開始（カウントダウンは休憩ウィンドウ内で済んでいる）
-        self.on_work_start_countdown_finished()
+        # メインタイマーが自然に次のフェイズ（作業）に進むまで待つ
+        # 休憩ウィンドウは表示用なので、メインタイマーの進行に干渉しない
+        logger.info("⏳ メインタイマーが作業フェイズに移行するまで待機")
+        
+        # ミニマルウィンドウを再表示
+        if hasattr(self, 'minimal_window') and self.minimal_window:
+            self.minimal_window.show()
+            self.minimal_window.raise_()
+            self.minimal_window.activateWindow()
+            logger.info("🔽 休憩終了：ミニマルウィンドウを再表示")
     
     def show_work_start_countdown(self):
         """作業開始前の3秒カウントダウン表示"""
@@ -9309,10 +9725,24 @@ class MainWindow(QMainWindow):
             self.countdown_window.close()
             self.countdown_window = None
         
-        # 作業タイマーを自動開始
+        # タイマーのモードを作業モードに確実に設定
+        if hasattr(self.timer_data, 'current_mode'):
+            self.timer_data.current_mode = 'work'
+            logger.info("🔄 タイマーモードを作業モードに設定")
+        
+        # 新しい作業セッションのタイマーを開始
         if not self.timer_data.is_running:
+            # 作業時間を設定（テンプレートから取得）
+            template = getattr(self, 'current_template', None)
+            if template:
+                work_minutes = template.get('work_minutes', 25)
+                self.timer_data.time_left = work_minutes * 60
+                logger.info(f"⏰ 新しい作業セッション設定: {work_minutes}分")
+            
             self.timer_data.start_timer()
             logger.info("⏰ 作業タイマー自動開始")
+        else:
+            logger.info("⏰ タイマーは既に動作中")
         
         # ミニマルウィンドウを再表示
         if hasattr(self, 'minimal_window') and self.minimal_window:
@@ -9329,8 +9759,29 @@ class MainWindow(QMainWindow):
         logger.info("⏩ シンプル休憩ウィンドウスキップ")
         self.break_window = None
         
-        # スキップの場合は直接作業セッション開始
-        self.on_work_start_countdown_finished()
+        # 休憩を強制終了して次の作業フェイズに移行
+        if hasattr(self.timer_data, 'current_mode') and self.timer_data.current_mode == 'break':
+            # 作業モードに切り替えて新しいセッション開始
+            self.timer_data.current_mode = 'work'
+            
+            # 新しい作業セッションの時間を設定
+            template = getattr(self, 'current_template', None)
+            if template:
+                work_minutes = template.get('work_minutes', 25)
+                self.timer_data.time_left = work_minutes * 60
+                logger.info(f"⏰ スキップ：新しい作業セッション設定 {work_minutes}分")
+            
+            # タイマーを再開（作業モード）
+            if not self.timer_data.is_running:
+                self.timer_data.start_timer()
+                logger.info("▶️ スキップ：作業タイマー開始")
+        
+        # ミニマルウィンドウを再表示
+        if hasattr(self, 'minimal_window') and self.minimal_window:
+            self.minimal_window.show()
+            self.minimal_window.raise_()
+            self.minimal_window.activateWindow()
+            logger.info("🔽 スキップ：ミニマルウィンドウを再表示")
         
         # さりげない通知
         self.statusBar().showMessage("休憩をスキップしました", 2000)
@@ -9520,9 +9971,37 @@ Phase 3 Final with Integrated Simple Break Window - 統計レポート ({datetim
         # タスクリスト更新（セッション完了時のみ）
         self.refresh_task_list()
         
-        # 作業セッション完了時のみ軽い通知（休憩は休憩ウィンドウで処理）
+        # セッション終了時の処理
         if session_type == "work":
             self.statusBar().showMessage("作業セッション完了！", 2000)
+        elif session_type == "break":
+            # 休憩セッション完了時：次の作業セッションを自動開始
+            logger.info("✅ 休憩セッション完了 - 次の作業セッション開始")
+            
+            # 作業モードに切り替え
+            if hasattr(self.timer_data, 'current_mode'):
+                self.timer_data.current_mode = 'work'
+            
+            # 新しい作業セッションの時間を設定
+            template = getattr(self, 'current_template', None)
+            if template:
+                work_minutes = template.get('work_minutes', 25)
+                self.timer_data.time_left = work_minutes * 60
+                logger.info(f"⏰ 次の作業セッション設定: {work_minutes}分")
+            
+            # タイマーを自動開始
+            if not self.timer_data.is_running:
+                self.timer_data.start_timer()
+                logger.info("▶️ 作業タイマー自動開始")
+            
+            # ミニマルウィンドウを確実に表示
+            if hasattr(self, 'minimal_window') and self.minimal_window:
+                self.minimal_window.show()
+                self.minimal_window.raise_()
+                self.minimal_window.activateWindow()
+                logger.info("🔽 作業開始：ミニマルウィンドウを表示")
+            
+            self.statusBar().showMessage("次の作業セッション開始！", 2000)
     
     def on_work_duration_changed(self, value: int):
         """作業時間設定変更"""

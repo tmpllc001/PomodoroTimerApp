@@ -149,6 +149,102 @@
       "duration": 1,
       "completed_at": "2025-07-27T14:45:48.417368",
       "date": "2025-07-27"
+    },
+    {
+      "type": "work",
+      "duration": 1,
+      "completed_at": "2025-07-27T14:50:23.062608",
+      "date": "2025-07-27"
+    },
+    {
+      "type": "break",
+      "duration": 1,
+      "completed_at": "2025-07-27T14:51:23.091698",
+      "date": "2025-07-27"
+    },
+    {
+      "type": "work",
+      "duration": 1,
+      "completed_at": "2025-07-27T14:52:27.073050",
+      "date": "2025-07-27"
+    },
+    {
+      "type": "work",
+      "duration": 1,
+      "completed_at": "2025-07-27T14:58:03.214898",
+      "date": "2025-07-27"
+    },
+    {
+      "type": "break",
+      "duration": 1,
+      "completed_at": "2025-07-27T14:59:03.244855",
+      "date": "2025-07-27"
+    },
+    {
+      "type": "work",
+      "duration": 1,
+      "completed_at": "2025-07-27T15:01:19.902225",
+      "date": "2025-07-27"
+    },
+    {
+      "type": "break",
+      "duration": 1,
+      "completed_at": "2025-07-27T15:02:19.916186",
+      "date": "2025-07-27"
+    },
+    {
+      "type": "work",
+      "duration": 1,
+      "completed_at": "2025-07-27T15:09:26.810541",
+      "date": "2025-07-27"
+    },
+    {
+      "type": "break",
+      "duration": 1,
+      "completed_at": "2025-07-27T15:11:26.845818",
+      "date": "2025-07-27"
+    },
+    {
+      "type": "work",
+      "duration": 1,
+      "completed_at": "2025-07-27T15:13:01.355814",
+      "date": "2025-07-27"
+    },
+    {
+      "type": "work",
+      "duration": 1,
+      "completed_at": "2025-07-29T21:34:57.559616",
+      "date": "2025-07-29"
+    },
+    {
+      "type": "break",
+      "duration": 1,
+      "completed_at": "2025-07-29T21:35:57.600074",
+      "date": "2025-07-29"
+    },
+    {
+      "type": "work",
+      "duration": 1,
+      "completed_at": "2025-07-30T09:17:53.807820",
+      "date": "2025-07-30"
+    },
+    {
+      "type": "break",
+      "duration": 1,
+      "completed_at": "2025-07-30T09:18:53.852311",
+      "date": "2025-07-30"
+    },
+    {
+      "type": "work",
+      "duration": 1,
+      "completed_at": "2025-07-30T09:19:53.853019",
+      "date": "2025-07-30"
+    },
+    {
+      "type": "break",
+      "duration": 1,
+      "completed_at": "2025-07-30T09:20:53.901406",
+      "date": "2025-07-30"
     }
   ]
 }

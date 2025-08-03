@@ -1,0 +1,13 @@
+# ========================================
+# Pomodoro Timer App - Build Dependencies
+# ========================================
+# アプリケーションのビルドに必要な依存関係
+
+# Production dependencies (アプリケーション実行に必要)
+-r requirements_production.txt
+
+# Build tools
+PyInstaller>=6.0.0
+
+# Optional: UPX for executable compression
+# UPXは別途インストールが必要: https://upx.github.io/

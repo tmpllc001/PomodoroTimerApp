@@ -1,0 +1,24 @@
+# ========================================
+# Pomodoro Timer App - Production Dependencies
+# ========================================
+
+# Core GUI Framework (必須)
+PyQt6>=6.6.0
+PyQt6-Qt6>=6.6.0
+
+# Audio Support (必須)
+pygame>=2.5.0
+
+# Data Visualization (オプション - 統計グラフ機能)
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# 日本語フォントサポート（Linux環境用）
+# 注意: Windows/macOSはシステムフォントを使用
+# Linux環境では以下のパッケージをインストール:
+# - Ubuntu/Debian: sudo apt-get install fonts-noto-cjk fonts-ipafont
+# - RHEL/CentOS: sudo yum install google-noto-cjk-fonts
+# - Arch: sudo pacman -S noto-fonts-cjk
+
+# PDF Export (オプション - レポート出力機能)
+reportlab>=4.0.0

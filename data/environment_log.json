@@ -259,6 +259,146 @@
       "focus_score": 0,
       "interruptions": 0,
       "interactions": 1
+    },
+    {
+      "session_start": "2025-07-27T14:49:23.064823",
+      "session_type": "work",
+      "hour_of_day": 14,
+      "day_of_week": 6,
+      "day_name": "Sunday",
+      "month": 7,
+      "month_name": "July",
+      "season": "summer",
+      "date": "2025-07-27",
+      "time_period": "afternoon",
+      "weekend": true,
+      "session_end": "2025-07-27T14:50:23.060356",
+      "duration_minutes": 0,
+      "completed": false,
+      "efficiency_score": 0,
+      "focus_score": 0,
+      "interruptions": 0,
+      "interactions": 1
+    },
+    {
+      "session_start": "2025-07-27T14:57:03.214845",
+      "session_type": "work",
+      "hour_of_day": 14,
+      "day_of_week": 6,
+      "day_name": "Sunday",
+      "month": 7,
+      "month_name": "July",
+      "season": "summer",
+      "date": "2025-07-27",
+      "time_period": "afternoon",
+      "weekend": true,
+      "session_end": "2025-07-27T14:58:03.211809",
+      "duration_minutes": 0,
+      "completed": false,
+      "efficiency_score": 0,
+      "focus_score": 0,
+      "interruptions": 0,
+      "interactions": 1
+    },
+    {
+      "session_start": "2025-07-27T15:08:26.812739",
+      "session_type": "work",
+      "hour_of_day": 15,
+      "day_of_week": 6,
+      "day_name": "Sunday",
+      "month": 7,
+      "month_name": "July",
+      "season": "summer",
+      "date": "2025-07-27",
+      "time_period": "afternoon",
+      "weekend": true,
+      "session_end": "2025-07-27T15:09:26.807393",
+      "duration_minutes": 0,
+      "completed": false,
+      "efficiency_score": 0,
+      "focus_score": 0,
+      "interruptions": 0,
+      "interactions": 1
+    },
+    {
+      "session_start": "2025-07-27T15:12:01.353002",
+      "session_type": "work",
+      "hour_of_day": 15,
+      "day_of_week": 6,
+      "day_name": "Sunday",
+      "month": 7,
+      "month_name": "July",
+      "season": "summer",
+      "date": "2025-07-27",
+      "time_period": "afternoon",
+      "weekend": true,
+      "session_end": "2025-07-27T15:13:01.352991",
+      "duration_minutes": 0,
+      "completed": false,
+      "efficiency_score": 0,
+      "focus_score": 0,
+      "interruptions": 0,
+      "interactions": 1
+    },
+    {
+      "session_start": "2025-07-29T21:33:57.563973",
+      "session_type": "work",
+      "hour_of_day": 21,
+      "day_of_week": 1,
+      "day_name": "Tuesday",
+      "month": 7,
+      "month_name": "July",
+      "season": "summer",
+      "date": "2025-07-29",
+      "time_period": "evening",
+      "weekend": false,
+      "session_end": "2025-07-29T21:34:57.556616",
+      "duration_minutes": 0,
+      "completed": false,
+      "efficiency_score": 0,
+      "focus_score": 0,
+      "interruptions": 0,
+      "interactions": 1
+    },
+    {
+      "session_start": "2025-07-30T09:17:28.811250",
+      "session_type": "work",
+      "hour_of_day": 9,
+      "day_of_week": 2,
+      "day_name": "Wednesday",
+      "month": 7,
+      "month_name": "July",
+      "season": "summer",
+      "date": "2025-07-30",
+      "time_period": "morning",
+      "weekend": false,
+      "session_end": "2025-07-30T09:17:53.804970",
+      "duration_minutes": 0,
+      "completed": false,
+      "efficiency_score": 0,
+      "focus_score": 0,
+      "interruptions": 0,
+      "interactions": 1
+    },
+    {
+      "session_start": "2025-07-30T09:21:38.947494",
+      "session_type": "work",
+      "hour_of_day": 9,
+      "day_of_week": 2,
+      "day_name": "Wednesday",
+      "month": 7,
+      "month_name": "July",
+      "season": "summer",
+      "date": "2025-07-30",
+      "time_period": "morning",
+      "weekend": false,
+      "session_end": "2025-07-30T09:22:43.163022",
+      "duration_minutes": 0,
+      "completed": false,
+      "efficiency_score": 0,
+      "focus_score": 0,
+      "interruptions": 0,
+      "interactions": 3
     }
   ],
   "hourly_performance": {
@@ -285,6 +425,19 @@
       0.0,
       0.0,
       0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "15": [
+      0.0,
+      0.0
+    ],
+    "21": [
+      0.0
+    ],
+    "9": [
+      0.0,
       0.0
     ]
   },
@@ -308,6 +461,17 @@
       0.0,
       0.0,
       0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "1": [
+      0.0
+    ],
+    "2": [
+      0.0,
       0.0
     ]
   },
@@ -325,8 +489,15 @@
       0.0,
       0.0,
       0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
       0.0
     ]
   },
-  "last_updated": "2025-07-27T14:44:48.384605"
+  "last_updated": "2025-07-30T09:22:43.163084"
 }

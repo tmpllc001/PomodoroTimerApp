@@ -1,0 +1,11 @@
+# ========================================
+# Pomodoro Timer App - Minimal Dependencies
+# ========================================
+# 最小限の機能のみ（グラフ・PDF出力なし）
+
+# Core GUI Framework (必須)
+PyQt6>=6.6.0
+PyQt6-Qt6>=6.6.0
+
+# Audio Support (必須)
+pygame>=2.5.0

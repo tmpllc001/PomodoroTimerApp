@@ -628,23 +628,373 @@
       "completed": true,
       "efficiency_score": 100.0,
       "focus_score": 51.2
+    },
+    {
+      "session_id": "work_20250727_144923",
+      "type": "work",
+      "planned_duration": 1,
+      "start_time": "2025-07-27T14:49:23.064394",
+      "interactions": [
+        {
+          "timestamp": "2025-07-27T14:49:23.065001",
+          "type": "start_button",
+          "details": {
+            "session_type": "work"
+          },
+          "session_time": 0.00061
+        }
+      ],
+      "interruptions": [],
+      "focus_scores": [
+        {
+          "timestamp": "2025-07-27T14:49:33.057279",
+          "score": 50.3
+        },
+        {
+          "timestamp": "2025-07-27T14:49:43.053883",
+          "score": 50.7
+        },
+        {
+          "timestamp": "2025-07-27T14:49:53.054967",
+          "score": 51.0
+        },
+        {
+          "timestamp": "2025-07-27T14:50:03.054688",
+          "score": 51.3
+        },
+        {
+          "timestamp": "2025-07-27T14:50:13.052900",
+          "score": 51.7
+        },
+        {
+          "timestamp": "2025-07-27T14:50:23.055165",
+          "score": 52.0
+        }
+      ],
+      "environment_data": {},
+      "performance_metrics": {},
+      "end_time": "2025-07-27T14:50:23.055307",
+      "actual_duration": 0.99984855,
+      "completed": true,
+      "efficiency_score": 100.0,
+      "focus_score": 51.2
+    },
+    {
+      "session_id": "work_20250727_145703",
+      "type": "work",
+      "planned_duration": 1,
+      "start_time": "2025-07-27T14:57:03.214449",
+      "interactions": [
+        {
+          "timestamp": "2025-07-27T14:57:03.215043",
+          "type": "start_button",
+          "details": {
+            "session_type": "work"
+          },
+          "session_time": 0.000597
+        }
+      ],
+      "interruptions": [],
+      "focus_scores": [
+        {
+          "timestamp": "2025-07-27T14:57:13.211225",
+          "score": 50.3
+        },
+        {
+          "timestamp": "2025-07-27T14:57:23.212216",
+          "score": 50.7
+        },
+        {
+          "timestamp": "2025-07-27T14:57:33.212355",
+          "score": 51.0
+        },
+        {
+          "timestamp": "2025-07-27T14:57:43.210185",
+          "score": 51.3
+        },
+        {
+          "timestamp": "2025-07-27T14:57:53.212893",
+          "score": 51.7
+        },
+        {
+          "timestamp": "2025-07-27T14:58:03.209448",
+          "score": 52.0
+        }
+      ],
+      "environment_data": {},
+      "performance_metrics": {},
+      "end_time": "2025-07-27T14:58:03.209622",
+      "actual_duration": 0.99991955,
+      "completed": true,
+      "efficiency_score": 100.0,
+      "focus_score": 51.2
+    },
+    {
+      "session_id": "work_20250727_150826",
+      "type": "work",
+      "planned_duration": 1,
+      "start_time": "2025-07-27T15:08:26.812354",
+      "interactions": [
+        {
+          "timestamp": "2025-07-27T15:08:26.812926",
+          "type": "start_button",
+          "details": {
+            "session_type": "work"
+          },
+          "session_time": 0.000575
+        }
+      ],
+      "interruptions": [],
+      "focus_scores": [
+        {
+          "timestamp": "2025-07-27T15:08:36.805598",
+          "score": 50.3
+        },
+        {
+          "timestamp": "2025-07-27T15:08:46.804358",
+          "score": 50.7
+        },
+        {
+          "timestamp": "2025-07-27T15:08:56.802820",
+          "score": 51.0
+        },
+        {
+          "timestamp": "2025-07-27T15:09:06.803594",
+          "score": 51.3
+        },
+        {
+          "timestamp": "2025-07-27T15:09:16.803661",
+          "score": 51.7
+        },
+        {
+          "timestamp": "2025-07-27T15:09:26.804041",
+          "score": 52.0
+        }
+      ],
+      "environment_data": {},
+      "performance_metrics": {},
+      "end_time": "2025-07-27T15:09:26.804211",
+      "actual_duration": 0.9998642833333334,
+      "completed": true,
+      "efficiency_score": 100.0,
+      "focus_score": 51.2
+    },
+    {
+      "session_id": "work_20250727_151201",
+      "type": "work",
+      "planned_duration": 1,
+      "start_time": "2025-07-27T15:12:01.352570",
+      "interactions": [
+        {
+          "timestamp": "2025-07-27T15:12:01.353186",
+          "type": "start_button",
+          "details": {
+            "session_type": "work"
+          },
+          "session_time": 0.00062
+        }
+      ],
+      "interruptions": [],
+      "focus_scores": [
+        {
+          "timestamp": "2025-07-27T15:12:11.352084",
+          "score": 50.3
+        },
+        {
+          "timestamp": "2025-07-27T15:12:21.352258",
+          "score": 50.7
+        },
+        {
+          "timestamp": "2025-07-27T15:12:31.352425",
+          "score": 51.0
+        },
+        {
+          "timestamp": "2025-07-27T15:12:41.349739",
+          "score": 51.3
+        },
+        {
+          "timestamp": "2025-07-27T15:12:51.351713",
+          "score": 51.7
+        },
+        {
+          "timestamp": "2025-07-27T15:13:01.350412",
+          "score": 52.0
+        }
+      ],
+      "environment_data": {},
+      "performance_metrics": {},
+      "end_time": "2025-07-27T15:13:01.350595",
+      "actual_duration": 0.9999670833333333,
+      "completed": true,
+      "efficiency_score": 100.0,
+      "focus_score": 51.2
+    },
+    {
+      "session_id": "work_20250729_213357",
+      "type": "work",
+      "planned_duration": 1,
+      "start_time": "2025-07-29T21:33:57.563558",
+      "interactions": [
+        {
+          "timestamp": "2025-07-29T21:33:57.564160",
+          "type": "start_button",
+          "details": {
+            "session_type": "work"
+          },
+          "session_time": 0.000605
+        }
+      ],
+      "interruptions": [],
+      "focus_scores": [
+        {
+          "timestamp": "2025-07-29T21:34:07.555877",
+          "score": 50.3
+        },
+        {
+          "timestamp": "2025-07-29T21:34:17.553900",
+          "score": 50.7
+        },
+        {
+          "timestamp": "2025-07-29T21:34:27.554686",
+          "score": 51.0
+        },
+        {
+          "timestamp": "2025-07-29T21:34:37.555557",
+          "score": 51.3
+        },
+        {
+          "timestamp": "2025-07-29T21:34:47.552848",
+          "score": 51.7
+        },
+        {
+          "timestamp": "2025-07-29T21:34:57.553892",
+          "score": 52.0
+        }
+      ],
+      "environment_data": {},
+      "performance_metrics": {},
+      "end_time": "2025-07-29T21:34:57.554053",
+      "actual_duration": 0.9998415833333334,
+      "completed": true,
+      "efficiency_score": 100.0,
+      "focus_score": 51.2
+    },
+    {
+      "session_id": "work_20250730_091728",
+      "type": "work",
+      "planned_duration": 1,
+      "start_time": "2025-07-30T09:17:28.808942",
+      "interactions": [
+        {
+          "timestamp": "2025-07-30T09:17:28.811453",
+          "type": "start_button",
+          "details": {
+            "session_type": "work"
+          },
+          "session_time": 0.002514
+        }
+      ],
+      "interruptions": [],
+      "focus_scores": [
+        {
+          "timestamp": "2025-07-30T09:17:38.803138",
+          "score": 50.3
+        },
+        {
+          "timestamp": "2025-07-30T09:17:48.807618",
+          "score": 50.7
+        }
+      ],
+      "environment_data": {},
+      "performance_metrics": {},
+      "end_time": "2025-07-30T09:17:53.802293",
+      "actual_duration": 0.41655585,
+      "completed": true,
+      "efficiency_score": 41.7,
+      "focus_score": 50.5
+    },
+    {
+      "session_id": "work_20250730_092138",
+      "type": "work",
+      "planned_duration": 1,
+      "start_time": "2025-07-30T09:21:38.947048",
+      "interactions": [
+        {
+          "timestamp": "2025-07-30T09:21:38.947657",
+          "type": "start_button",
+          "details": {
+            "session_type": "work"
+          },
+          "session_time": 0.000612
+        },
+        {
+          "timestamp": "2025-07-30T09:21:43.299487",
+          "type": "pause_button",
+          "details": {},
+          "session_time": 4.352447
+        },
+        {
+          "timestamp": "2025-07-30T09:22:43.159371",
+          "type": "reset_button",
+          "details": {},
+          "session_time": 64.212332
+        }
+      ],
+      "interruptions": [],
+      "focus_scores": [
+        {
+          "timestamp": "2025-07-30T09:21:48.944073",
+          "score": 50.3
+        },
+        {
+          "timestamp": "2025-07-30T09:21:58.947094",
+          "score": 50.7
+        },
+        {
+          "timestamp": "2025-07-30T09:22:09.287847",
+          "score": 51.0
+        },
+        {
+          "timestamp": "2025-07-30T09:22:18.943544",
+          "score": 51.3
+        },
+        {
+          "timestamp": "2025-07-30T09:22:28.944126",
+          "score": 51.7
+        },
+        {
+          "timestamp": "2025-07-30T09:22:38.944114",
+          "score": 52.0
+        }
+      ],
+      "environment_data": {},
+      "performance_metrics": {},
+      "end_time": "2025-07-30T09:22:43.160051",
+      "actual_duration": 1.0702167166666667,
+      "completed": false,
+      "efficiency_score": 100.0,
+      "focus_score": 51.2
     }
   ],
   "metrics": {
     "interaction_start_button": [
-      "2025-07-27T10:35:06.995048",
-      "2025-07-27T10:42:02.634194",
-      "2025-07-27T14:18:35.065303",
-      "2025-07-27T14:29:29.755455",
-      "2025-07-27T14:36:18.704135",
-      "2025-07-27T14:43:48.394019"
+      "2025-07-29T21:33:57.564171",
+      "2025-07-29T21:36:29.048302",
+      "2025-07-29T21:36:32.303256",
+      "2025-07-30T09:17:28.811464",
+      "2025-07-30T09:21:38.947669"
     ],
     "interaction_mouse_click": [
-      "2025-07-26T00:29:41.308256"
+      "2025-07-29T21:36:47.845160"
     ],
     "interaction_reset_button": [
-      "2025-07-25T20:42:24.637389"
+      "2025-07-30T09:22:43.159393"
+    ],
+    "interaction_pause_button": [
+      "2025-07-29T21:36:29.744172",
+      "2025-07-29T21:36:36.346606",
+      "2025-07-30T09:21:43.299506"
     ]
   },
-  "last_updated": "2025-07-27T14:44:48.381802"
+  "last_updated": "2025-07-30T09:22:43.160173"
 }
